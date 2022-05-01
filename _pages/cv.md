@@ -11,21 +11,32 @@ redirect_from:
 
 Education
 ======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+* Tech. in Technology, SENAI-PR, 2015
+* B.S. in Electrical Engineering, Universidade Tecnológica Federal do Paraná, 2021
+
 
 Work experience
 ======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* 2019: Research Assistant
+  * LICON
+  * Duties included: Assist teachers in lab organization, meetings and facilitation with students.
+  * Supervisor: Hugo Siqueira.
+
+* Summer 2020: Automation Assistant 
+  * B2 Automação
+  * Duties included: Purchase of products, inventory control, customer contact.
+  * Supervisor: -----
+
+* 2021: Course Monitor
+  * Alura
+  * Duties included: Answering student questions on the forum, developing projects in Python, studying areas in data science.
+  * Supervisor: Nádia Oliveira
+
+* 2022:Machine Learning Instructor 
+  * Alura
+  * Duties included: Produce machine learning content, such as courses, articles, lives and podcasts.
+  * Supervisor: Rodrigo Dias
   
 Skills
 ======
