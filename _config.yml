@@ -40,14 +40,14 @@ timezone: Europe/Berlin
 markdown: kramdown
 highlighter: rouge
 
-permalink: /artigos/:year/:title/
+permalink: /pt/artigos/:year/:title/
 
 analytics: ""
 
 collections:
   projects:
     output: true
-    permalink: /pesquisa/:name/
+    permalink: /pt/pesquisa/:name/
   galeria:
     output: false
   videos:
@@ -57,7 +57,8 @@ collections:
   publicacoes:
     output: false
 
-# Idioma: tudo é português, exceto o que estiver nas pastas "en"
+# Idioma: tudo é português, exceto o que estiver nas pastas "en".
+# O INGLÊS é o idioma principal (endereço raiz "/"); o português fica em "/pt/".
 defaults:
   - scope: { path: "" }
     values: { lang: pt }
@@ -66,11 +67,11 @@ defaults:
   - scope: { path: "", type: posts }
     values: { layout: post }
   - scope: { path: "_posts/en", type: posts }
-    values: { lang: en, permalink: "/en/articles/:year/:title/" }
+    values: { lang: en, permalink: "/articles/:year/:title/" }
   - scope: { path: "", type: projects }
     values: { layout: post }
   - scope: { path: "_projects/en", type: projects }
-    values: { lang: en, permalink: "/en/research/:name/" }
+    values: { lang: en, permalink: "/research/:name/" }
 
 sass:
   sass_dir: assets/css/_sass

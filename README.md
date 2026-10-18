@@ -5,8 +5,8 @@ Site pessoal e acadêmico baseado no tema [Gradfolio](https://github.com/jitinna
 **ligação com o LinkedIn**, **botão de modo escuro** e **versões em português e inglês**. Hospedado de graça no GitHub Pages e editável
 direto pelo site do GitHub, sem instalar nada.
 
-Abas do cabeçalho: **Início · Pesquisa · Publicações · Conteúdos · CV**
-(em inglês: **Home · Research · Publications · Content · CV**, em `/en/`).
+O site abre **em inglês** (`/`): **Home · Research · Publications · Content · CV**.
+A versão em português fica em `/pt/`: **Início · Pesquisa · Publicações · Conteúdos · CV**.
 Conteúdos tem as subabas **Artigos · Vídeos · Podcasts · Galeria de fotos**.
 
 ---
@@ -28,7 +28,7 @@ Conteúdos tem as subabas **Artigos · Vídeos · Podcasts · Galeria de fotos**
 | Nomes das abas e demais textos da interface | `_data/i18n.yml` |
 | Ícones do rodapé (LinkedIn, YouTube, e-mail, Lattes, ORCID…) | `_config.yml` — use só o **usuário** (YouTube: `@canal`), exceto Lattes, Scholar e Spotify (link completo) |
 | Sua foto | substitua `assets/images/perfil.jpg` (quadrada, mesmo nome) |
-| Texto da página inicial | `index.md` (PT) e `en/index.md` (EN) |
+| Texto da página inicial | `en/index.md` (EN, principal) e `index.md` (PT) |
 | Cor principal (verde) | `assets/css/_sass/variables.scss` → `$brand-color` e `$projectbox` |
 
 Campos vazios (`""`) no `_config.yml` simplesmente não aparecem.

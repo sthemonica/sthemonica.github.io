@@ -1,27 +1,27 @@
 # Textos da interface em cada idioma.
 # Para mudar os nomes das abas do menu, edite "nav".
 pt:
-  home_url: /
+  home_url: /pt/
   nav:
-    - { key: home,     title: "Início",           url: "/" }
-    - { key: research, title: "Pesquisa",         url: "/pesquisa/" }
-    - { key: publications, title: "Publicações", url: "/publicacoes/" }
-    - { key: content,  title: "Conteúdos",        url: "/conteudos/" }
-    - { key: cv,       title: "CV",               url: "/cv/" }
-  research_url: /pesquisa/
+    - { key: home,     title: "Início",           url: "/pt/" }
+    - { key: research, title: "Pesquisa",         url: "/pt/pesquisa/" }
+    - { key: publications, title: "Publicações", url: "/pt/publicacoes/" }
+    - { key: content,  title: "Conteúdos",        url: "/pt/conteudos/" }
+    - { key: cv,       title: "CV",               url: "/pt/cv/" }
+  research_url: /pt/pesquisa/
   # Subabas de "Conteúdos"
   content_title: "Conteúdos"
   content_intro: "Artigos, vídeos, podcasts e fotos de momentos que quero compartilhar."
   content_tabs:
-    - { key: overview, title: "Tudo",     url: "/conteudos/" }
-    - { key: articles, title: "Artigos",  url: "/conteudos/artigos/" }
-    - { key: videos,   title: "Vídeos",   url: "/conteudos/videos/" }
-    - { key: podcasts, title: "Podcasts", url: "/conteudos/podcasts/" }
-    - { key: gallery,  title: "Galeria de fotos", url: "/conteudos/galeria/" }
-  articles_url: /conteudos/artigos/
-  gallery_url: /conteudos/galeria/
-  videos_url: /conteudos/videos/
-  podcasts_url: /conteudos/podcasts/
+    - { key: overview, title: "Tudo",     url: "/pt/conteudos/" }
+    - { key: articles, title: "Artigos",  url: "/pt/conteudos/artigos/" }
+    - { key: videos,   title: "Vídeos",   url: "/pt/conteudos/videos/" }
+    - { key: podcasts, title: "Podcasts", url: "/pt/conteudos/podcasts/" }
+    - { key: gallery,  title: "Galeria de fotos", url: "/pt/conteudos/galeria/" }
+  articles_url: /pt/conteudos/artigos/
+  gallery_url: /pt/conteudos/galeria/
+  videos_url: /pt/conteudos/videos/
+  podcasts_url: /pt/conteudos/podcasts/
   see_all: "Ver todos →"
   latest_posts: "Últimos artigos"
   all_posts: "Ver todos os artigos →"
@@ -81,26 +81,26 @@ pt:
   months: [janeiro, fevereiro, março, abril, maio, junho, julho, agosto, setembro, outubro, novembro, dezembro]
 
 en:
-  home_url: /en/
+  home_url: /
   nav:
-    - { key: home,     title: "Home",          url: "/en/" }
-    - { key: research, title: "Research",      url: "/en/research/" }
-    - { key: publications, title: "Publications", url: "/en/publications/" }
-    - { key: content,  title: "Content",       url: "/en/content/" }
-    - { key: cv,       title: "CV",            url: "/en/cv/" }
-  research_url: /en/research/
+    - { key: home,     title: "Home",          url: "/" }
+    - { key: research, title: "Research",      url: "/research/" }
+    - { key: publications, title: "Publications", url: "/publications/" }
+    - { key: content,  title: "Content",       url: "/content/" }
+    - { key: cv,       title: "CV",            url: "/cv/" }
+  research_url: /research/
   content_title: "Content"
   content_intro: "Articles, videos, podcasts and photos of moments I want to share."
   content_tabs:
-    - { key: overview, title: "All",      url: "/en/content/" }
-    - { key: articles, title: "Articles", url: "/en/content/articles/" }
-    - { key: videos,   title: "Videos",   url: "/en/content/videos/" }
-    - { key: podcasts, title: "Podcasts", url: "/en/content/podcasts/" }
-    - { key: gallery,  title: "Photo gallery", url: "/en/content/gallery/" }
-  articles_url: /en/content/articles/
-  gallery_url: /en/content/gallery/
-  videos_url: /en/content/videos/
-  podcasts_url: /en/content/podcasts/
+    - { key: overview, title: "All",      url: "/content/" }
+    - { key: articles, title: "Articles", url: "/content/articles/" }
+    - { key: videos,   title: "Videos",   url: "/content/videos/" }
+    - { key: podcasts, title: "Podcasts", url: "/content/podcasts/" }
+    - { key: gallery,  title: "Photo gallery", url: "/content/gallery/" }
+  articles_url: /content/articles/
+  gallery_url: /content/gallery/
+  videos_url: /content/videos/
+  podcasts_url: /content/podcasts/
   see_all: "See all →"
   latest_posts: "Latest articles"
   all_posts: "See all articles →"

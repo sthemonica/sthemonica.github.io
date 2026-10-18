@@ -1,6 +1,6 @@
 ---
 layout: about
-permalink: /
+permalink: /pt/
 profile:
   align: right
   image: perfil.jpg

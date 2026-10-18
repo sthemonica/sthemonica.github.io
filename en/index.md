@@ -1,6 +1,6 @@
 ---
 layout: about
-permalink: /en/
+permalink: /
 lang: en
 ref: home
 section: home

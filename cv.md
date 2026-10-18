@@ -1,7 +1,7 @@
 ---
 title: "Currículo"
 layout: cv
-permalink: /cv/
+permalink: /pt/cv/
 lang: pt
 ref: cv
 section: cv

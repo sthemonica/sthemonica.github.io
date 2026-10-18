@@ -1,7 +1,7 @@
 ---
 title: "Curriculum Vitae"
 layout: cv
-permalink: /en/cv/
+permalink: /cv/
 lang: en
 ref: cv
 section: cv

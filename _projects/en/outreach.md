@@ -6,4 +6,4 @@ ref: divulgacao
 ---
 
 Describe how you communicate science to a general audience and why it matters
-to you. You can link to the [Content](/en/content/) tab.
+to you. You can link to the [Content](/content/) tab.

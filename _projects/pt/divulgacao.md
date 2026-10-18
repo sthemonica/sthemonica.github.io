@@ -6,4 +6,4 @@ ref: divulgacao
 ---
 
 Conte aqui como você comunica ciência para o público geral e por que isso
-importa para você. Dá para linkar para a aba [Conteúdos](/conteudos/).
+importa para você. Dá para linkar para a aba [Conteúdos](/pt/conteudos/).
