@@ -10,7 +10,7 @@ description_en: "PhD candidate in [field] | [University] | Bremen, Germany"
 # Os nomes das abas do menu ficam em _data/i18n.yml
 
 # Se o repositório se chamar  SEU-USUARIO.github.io  deixe baseurl vazio.
-url: "https://SEU-USUARIO.github.io"
+url: "https://sthemonica.github.io"
 baseurl: ""
 
 # Na aba Publicações, este nome aparece em negrito na lista de autores
