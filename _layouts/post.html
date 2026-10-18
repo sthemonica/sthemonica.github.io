@@ -1,0 +1,56 @@
+---
+layout: default
+---
+{%- include i18n.html -%}
+{%- assign is_post = false -%}{%- if page.collection == "posts" -%}{%- assign is_post = true -%}{%- endif -%}
+{%- include find-translation.html item=page -%}
+
+{% if is_post %}
+<div class="translation-note">
+  {% if translation %}
+    🌐 {{ t.other_version }} <a href="{{ translation.url | relative_url }}" hreflang="{{ other }}">{{ translation.title }}</a>
+  {% else %}
+    {% capture _tr %}{% include auto-translate-url.html item=page from=lang to=other %}{% endcapture %}
+    🌐 <a href="{{ _tr | strip }}" target="_blank" rel="noopener" hreflang="{{ other }}">{{ t.translate_cta }}</a>
+  {% endif %}
+</div>
+{% endif %}
+
+<h1 class="post-headline">{{ page.title }}</h1>
+{% if is_post %}
+<p class="meta"><small>
+  {% include data-pt.html date=page.date lang=lang %}
+  {% assign words = content | number_of_words %} · {{ words | divided_by: 200 | plus: 1 | floor }} {{ t.min_read }}
+  {% for tg in page.tags %}<span class="tag">{{ tg }}</span>{% endfor %}
+</small></p>
+{% elsif page.description %}
+<p class="meta"><small>{{ page.description }}</small></p>
+{% endif %}
+
+{% if page.imagem and page.imagem != "" %}<img class="post-cover" src="{{ page.imagem | relative_url }}" alt="">{% endif %}
+
+{{ content }}
+
+{% if is_post %}
+{% assign share_url = page.url | absolute_url | url_encode %}
+<div class="share">
+  {% if page.linkedin and page.linkedin != "" %}
+  <a class="simplebutton linkedin-btn" href="{{ page.linkedin }}" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> {{ t.see_linkedin }}</a>
+  {% endif %}
+  <a class="simplebutton" href="https://www.linkedin.com/sharing/share-offsite/?url={{ share_url }}" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> {{ t.share_linkedin }}</a>
+</div>
+
+{%- comment -%} Anterior/próximo apenas entre posts do mesmo idioma {%- endcomment -%}
+{%- assign _same = site.posts | where: "lang", lang -%}
+{%- assign _newer = nil -%}{%- assign _older = nil -%}{%- assign _found = false -%}
+{%- for p in _same -%}
+  {%- if _found -%}{%- assign _older = p -%}{%- break -%}{%- endif -%}
+  {%- if p.url == page.url -%}{%- assign _found = true -%}{%- else -%}{%- assign _newer = p -%}{%- endif -%}
+{%- endfor -%}
+<nav class="post-nav">
+  {% if _older %}<a href="{{ _older.url | relative_url }}">← {{ _older.title }}</a>{% else %}<span></span>{% endif %}
+  {% if _newer %}<a href="{{ _newer.url | relative_url }}">{{ _newer.title }} →</a>{% endif %}
+</nav>
+{% else %}
+<p><a class="more-link" href="{{ t.research_url | relative_url }}">{{ t.back_research }}</a></p>
+{% endif %}

@@ -1,0 +1,23 @@
+{%- include i18n.html -%}
+{% include content-tabs.html active="overview" %}
+<p class="page-intro">{{ t.content_intro }}</p>
+
+<section class="content-section">
+  <div class="section-head"><h3>{{ t.content_tabs[1].title }}</h3><a href="{{ t.articles_url | relative_url }}">{{ t.see_all }}</a></div>
+  {% include posts-list.html limit=3 compact=true %}
+</section>
+
+<section class="content-section">
+  <div class="section-head"><h3>{{ t.content_tabs[2].title }}</h3><a href="{{ t.videos_url | relative_url }}">{{ t.see_all }}</a></div>
+  {% include videos-list.html limit=3 %}
+</section>
+
+<section class="content-section">
+  <div class="section-head"><h3>{{ t.content_tabs[3].title }}</h3><a href="{{ t.podcasts_url | relative_url }}">{{ t.see_all }}</a></div>
+  {% include podcasts-list.html limit=3 compact=true %}
+</section>
+
+<section class="content-section">
+  <div class="section-head"><h3>{{ t.content_tabs[4].title }}</h3><a href="{{ t.gallery_url | relative_url }}">{{ t.see_all }}</a></div>
+  {% include gallery.html limit=3 %}
+</section>

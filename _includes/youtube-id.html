@@ -1,0 +1,14 @@
+{%- comment -%} Extrai o ID do vídeo de include.url (aceita links watch?v=, youtu.be/, shorts/, live/ ou só o ID) {%- endcomment -%}
+{%- assign _u = include.url | strip -%}
+{%- if _u contains "v=" -%}
+  {%- assign _u = _u | split: "v=" | last | split: "&" | first -%}
+{%- elsif _u contains "youtu.be/" -%}
+  {%- assign _u = _u | split: "youtu.be/" | last | split: "?" | first -%}
+{%- elsif _u contains "/shorts/" -%}
+  {%- assign _u = _u | split: "/shorts/" | last | split: "?" | first -%}
+{%- elsif _u contains "/live/" -%}
+  {%- assign _u = _u | split: "/live/" | last | split: "?" | first -%}
+{%- elsif _u contains "/embed/" -%}
+  {%- assign _u = _u | split: "/embed/" | last | split: "?" | first -%}
+{%- endif -%}
+{{- _u | strip -}}

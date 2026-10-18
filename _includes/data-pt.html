@@ -1,0 +1,9 @@
+{%- comment -%} Data no idioma da página. Uso: {% include data-pt.html date=post.date %} {%- endcomment -%}
+{%- assign _l = include.lang | default: page.lang | default: "pt" -%}
+{%- assign _months = site.data.i18n[_l].months -%}
+{%- assign _m = include.date | date: "%-m" | minus: 1 -%}
+{%- if _l == "en" -%}
+{{ _months[_m] }} {{ include.date | date: "%-d" }}, {{ include.date | date: "%Y" }}
+{%- else -%}
+{{ include.date | date: "%-d" }} de {{ _months[_m] }} de {{ include.date | date: "%Y" }}
+{%- endif -%}

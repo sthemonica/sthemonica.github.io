@@ -1,0 +1,18 @@
+{%- comment -%} Botões do canto superior direito: idioma e modo escuro {%- endcomment -%}
+{%- if translation -%}
+  {%- assign switch_url = translation.url | relative_url -%}
+{%- elsif page.collection == "posts" -%}
+  {%- capture switch_url -%}{% include auto-translate-url.html item=page from=lang to=other %}{%- endcapture -%}
+  {%- assign switch_url = switch_url | strip -%}
+{%- else -%}
+  {%- assign switch_url = t_other.home_url | relative_url -%}
+{%- endif -%}
+<div class="header-tools">
+  <a class="lang-switch" href="{{ switch_url }}" hreflang="{{ other }}" title="{{ t.switch_title }}"{% if page.collection == "posts" and translation == nil %} target="_blank" rel="noopener"{% endif %}>
+    <span class="{% if lang == 'pt' %}on{% endif %}">PT</span> | <span class="{% if lang == 'en' %}on{% endif %}">EN</span>
+  </a>
+  <button class="theme-toggle" type="button" data-dark="{{ t.theme_dark }}" data-light="{{ t.theme_light }}" aria-label="{{ t.theme_dark }}">
+    <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+</div>

@@ -1,0 +1,5 @@
+{%- comment -%} Define: lang (idioma da página), other (o outro idioma), t (textos), t_other {%- endcomment -%}
+{%- assign lang = page.lang | default: "pt" -%}
+{%- if lang == "en" -%}{%- assign other = "pt" -%}{%- else -%}{%- assign other = "en" -%}{%- endif -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign t_other = site.data.i18n[other] -%}

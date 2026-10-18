@@ -1,0 +1,15 @@
+---
+layout: default
+---
+{%- include i18n.html -%}
+{% if page.profile and page.profile.image %}
+  <img class="profile {{ page.profile.align | default: 'right' }}" width="33.33%" src="{{ page.profile.image | prepend: '/assets/images/' | relative_url }}" alt="{{ t.photo_of }} {{ site.title }}">
+{% endif %}
+
+{{ content }}
+
+<div class="home-latest">
+  <h3>{{ t.latest_posts }}</h3>
+  {% include posts-list.html limit=3 compact=true %}
+  <a class="more-link" href="{{ t.articles_url | relative_url }}">{{ t.all_posts }}</a>
+</div>

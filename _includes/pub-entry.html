@@ -1,0 +1,30 @@
+{%- comment -%} Uma publicação (include.pub). include.compact = true → só a referência, sem botões {%- endcomment -%}
+{%- assign _p = include.pub -%}
+{%- assign _authors = _p.autores -%}
+{%- if site.destaque_nome and site.destaque_nome != "" and _authors contains site.destaque_nome -%}
+{%- capture _strong -%}<strong>{{ site.destaque_nome }}</strong>{%- endcapture -%}
+{%- assign _authors = _authors | replace: site.destaque_nome, _strong -%}
+{%- endif -%}
+{%- assign _doi = "" -%}
+{%- if _p.doi and _p.doi != "" -%}
+{%- if _p.doi contains "doi.org" -%}{%- assign _doi = _p.doi -%}{%- else -%}{%- assign _doi = "https://doi.org/" | append: _p.doi -%}{%- endif -%}
+{%- endif -%}
+{%- assign _main = _doi -%}{%- if _main == "" and _p.link -%}{%- assign _main = _p.link -%}{%- endif -%}
+<span class="pub-title">{% if _main and _main != "" %}<a href="{{ _main }}" target="_blank" rel="noopener">{{ _p.title }}</a>{% else %}{{ _p.title }}{% endif %}</span>
+<span class="pub-authors">{{ _authors }}</span>
+<span class="pub-venue">{% if _p.veiculo and _p.veiculo != "" %}<em>{{ _p.veiculo }}</em>, {% endif %}{{ _p.ano }}.{% if _p.status and _p.status != "" %} <span class="pub-status">{{ _p.status }}</span>{% endif %}</span>
+{%- unless include.compact %}
+<span class="pub-links">
+{%- if _doi != "" %}<a href="{{ _doi }}" target="_blank" rel="noopener">DOI</a>{% endif -%}
+{%- if _p.pdf and _p.pdf != "" %}<a href="{{ _p.pdf | relative_url }}" target="_blank" rel="noopener">PDF</a>{% endif -%}
+{%- if _p.link and _p.link != "" and _doi != "" %}<a href="{{ _p.link }}" target="_blank" rel="noopener">Link</a>{% endif -%}
+{%- if _p.codigo and _p.codigo != "" %}<a href="{{ _p.codigo }}" target="_blank" rel="noopener">{{ t.code }}</a>{% endif -%}
+{%- if _p.dados and _p.dados != "" %}<a href="{{ _p.dados }}" target="_blank" rel="noopener">{{ t.data }}</a>{% endif -%}
+{%- if _p.slides and _p.slides != "" %}<a href="{{ _p.slides | relative_url }}" target="_blank" rel="noopener">{{ t.slides }}</a>{% endif -%}
+{%- if _p.poster and _p.poster != "" %}<a href="{{ _p.poster | relative_url }}" target="_blank" rel="noopener">{{ t.poster }}</a>{% endif -%}
+</span>
+{%- assign _abs = _p.content | strip_html | strip -%}
+{%- if _abs != "" %}
+<details class="pub-abstract"><summary>{{ t.abstract }}</summary>{{ _p.content }}</details>
+{%- endif -%}
+{%- endunless -%}

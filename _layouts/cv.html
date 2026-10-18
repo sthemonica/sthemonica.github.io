@@ -1,0 +1,27 @@
+---
+layout: default
+---
+{%- include i18n.html -%}
+<div class="cv-actions">
+  {% if site.cv_pdf and site.cv_pdf != "" %}
+    <a class="simplebutton" href="{{ site.cv_pdf | relative_url }}" download><i class="fas fa-file-arrow-down"></i> {{ t.cv_download }}</a>
+  {% else %}
+    <button class="simplebutton" type="button" onclick="window.print()"><i class="fas fa-file-arrow-down"></i> {{ t.cv_download }}</button>
+    <small class="meta">{{ t.cv_hint }}</small>
+  {% endif %}
+</div>
+
+<div class="cv">
+  <div class="cv-head">
+    <h1>{{ site.title }}</h1>
+    <p class="cv-role">{% if lang == "en" and site.description_en %}{{ site.description_en }}{% else %}{{ site.description }}{% endif %}</p>
+    <p class="cv-contacts">
+      {%- if site.email and site.email != "" -%}<a href="mailto:{{ site.email }}">{{ site.email }}</a>{%- endif -%}
+      {%- if site.linkedin and site.linkedin != "" %} · <a href="https://www.linkedin.com/in/{{ site.linkedin }}">linkedin.com/in/{{ site.linkedin }}</a>{%- endif -%}
+      {%- if site.orcid and site.orcid != "" %} · <a href="https://orcid.org/{{ site.orcid }}">ORCID {{ site.orcid }}</a>{%- endif -%}
+      {%- assign _site = site.url | remove: "https://" | remove: "http://" -%}
+      {%- if _site != "" %} · <a href="{{ t.home_url | absolute_url }}">{{ _site }}</a>{%- endif -%}
+    </p>
+  </div>
+  {{ content }}
+</div>

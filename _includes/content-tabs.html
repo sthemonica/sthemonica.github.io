@@ -1,0 +1,7 @@
+{%- include i18n.html -%}
+<h2 class="page-title">{{ t.content_title }}</h2>
+<nav class="content-tabs" aria-label="{{ t.content_title }}">
+  {% for tab in t.content_tabs %}
+  <a href="{{ tab.url | relative_url }}"{% if tab.key == include.active %} class="active" aria-current="page"{% endif %}>{{ tab.title }}</a>
+  {% endfor %}
+</nav>

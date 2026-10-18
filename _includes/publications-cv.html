@@ -1,0 +1,8 @@
+{%- comment -%} Lista compacta de publicações para o CV (puxada automaticamente da aba Publicações) {%- endcomment -%}
+{%- include i18n.html -%}
+{%- assign _all = site.publicacoes | sort: "ano" | reverse -%}
+<ol class="pub-list pub-cv">
+{%- for pub in _all %}
+<li class="pub">{% include pub-entry.html pub=pub compact=true %}</li>
+{%- endfor %}
+</ol>

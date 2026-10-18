@@ -1,0 +1,94 @@
+# =========================================================
+#  CONFIGURAÇÃO DO SITE — edite os campos abaixo
+#  (depois de salvar, o GitHub leva ~1 min para republicar)
+# =========================================================
+
+# Cabeçalho
+title: "Sthefanie Sobrenome"
+description: "Doutoranda em [área] | [Universidade] | Bremen, Alemanha"
+description_en: "PhD candidate in [field] | [University] | Bremen, Germany"
+# Os nomes das abas do menu ficam em _data/i18n.yml
+
+# Se o repositório se chamar  SEU-USUARIO.github.io  deixe baseurl vazio.
+url: "https://SEU-USUARIO.github.io"
+baseurl: ""
+
+# Na aba Publicações, este nome aparece em negrito na lista de autores
+# (escreva exatamente como aparece nas suas publicações):
+destaque_nome: "Sobrenome S"
+
+# ---------- Ícones do rodapé ----------
+# Coloque só o SEU USUÁRIO (não o link inteiro). Deixe vazio para esconder.
+email: "seu-email@exemplo.com"
+linkedin: "SEU-PERFIL"          # linkedin.com/in/SEU-PERFIL
+github: ""
+researchgate: ""                # researchgate.net/profile/USUARIO
+orcid: ""                       # ex.: 0000-0002-1825-0097
+instagram: ""
+youtube: ""                     # ex.: @meucanal  (youtube.com/@meucanal)
+spotify: ""                     # opcional: link completo do seu podcast no Spotify
+bluesky: ""
+# Estes três recebem o LINK COMPLETO:
+lattes: ""                      # ex.: http://lattes.cnpq.br/1234567890123456
+google_scholar: ""              # link do seu perfil no Google Scholar
+# CV: a aba "CV" gera o PDF a partir de cv.md. Se preferir oferecer um PDF
+# pronto (feito no Word, Canva, LaTeX...), envie para assets/files/ e preencha:
+cv_pdf: ""                      # ex.: /assets/files/CV.pdf
+
+# ---------- Não precisa mexer daqui para baixo ----------
+timezone: Europe/Berlin
+markdown: kramdown
+highlighter: rouge
+
+permalink: /artigos/:year/:title/
+
+analytics: ""
+
+collections:
+  projects:
+    output: true
+    permalink: /pesquisa/:name/
+  galeria:
+    output: false
+  videos:
+    output: false
+  podcasts:
+    output: false
+  publicacoes:
+    output: false
+
+# Idioma: tudo é português, exceto o que estiver nas pastas "en"
+defaults:
+  - scope: { path: "" }
+    values: { lang: pt }
+  - scope: { path: "en" }
+    values: { lang: en }
+  - scope: { path: "", type: posts }
+    values: { layout: post }
+  - scope: { path: "_posts/en", type: posts }
+    values: { lang: en, permalink: "/en/articles/:year/:title/" }
+  - scope: { path: "", type: projects }
+    values: { layout: post }
+  - scope: { path: "_projects/en", type: projects }
+    values: { lang: en, permalink: "/en/research/:name/" }
+
+sass:
+  sass_dir: assets/css/_sass
+  style: compressed
+
+include:
+  - _pages
+
+exclude:
+  - README.md
+  - GUIA.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - modelos
+  - vendor
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-sitemap

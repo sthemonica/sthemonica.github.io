@@ -1,0 +1,49 @@
+{%- comment -%}
+  Episódios de podcast. Parâmetros opcionais: limit, compact (true = sem player embutido)
+{%- endcomment -%}
+{%- include i18n.html -%}
+{%- assign _eps = site.podcasts | sort: "date" | reverse -%}
+{%- assign _limit = include.limit | default: 1000 -%}
+{% if _eps.size == 0 %}
+  <p class="meta">{{ t.no_podcasts }}</p>
+{% else %}
+<div class="podcast-list">
+  {% for item in _eps limit: _limit %}
+  {%- assign _title = item.title -%}
+  {%- assign _desc = item.content | strip_html | strip -%}
+  {%- if lang == "en" -%}
+    {%- if item.title_en and item.title_en != "" -%}{%- assign _title = item.title_en -%}{%- endif -%}
+    {%- if item.texto_en and item.texto_en != "" -%}{%- assign _desc = item.texto_en -%}{%- endif -%}
+  {%- endif -%}
+  {%- assign _embed = "" -%}
+  {%- if item.spotify and item.spotify != "" -%}
+    {%- if item.spotify contains "/episode/" -%}
+      {%- assign _sid = item.spotify | split: "/episode/" | last | split: "?" | first -%}
+      {%- assign _embed = "https://open.spotify.com/embed/episode/" | append: _sid -%}
+    {%- elsif item.spotify contains "/show/" -%}
+      {%- assign _sid = item.spotify | split: "/show/" | last | split: "?" | first -%}
+      {%- assign _embed = "https://open.spotify.com/embed/show/" | append: _sid -%}
+    {%- endif -%}
+  {%- endif -%}
+  <div class="podcast-card">
+    <div class="podcast-head">
+      <span class="podcast-icon" aria-hidden="true"><i class="fas fa-podcast"></i></span>
+      <div>
+        <strong>{{ _title }}</strong>
+        <small class="meta">{% if item.programa and item.programa != "" %}{{ item.programa }} · {% endif %}{% include data-pt.html date=item.date lang=lang %}{% if item.idioma and item.idioma != lang %} · <span class="lang-badge" title="{{ t.in_other_lang }}">{{ item.idioma | upcase }}</span>{% endif %}</small>
+      </div>
+    </div>
+    {% if _desc != "" %}<p class="podcast-desc">{{ _desc | truncatewords: 40 }}</p>{% endif %}
+    {% if _embed != "" and include.compact != true %}
+      <iframe class="spotify-embed" src="{{ _embed }}" height="152" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="{{ _title | escape }}"></iframe>
+    {% endif %}
+    <div class="podcast-links">
+      {% if item.spotify and item.spotify != "" %}<a href="{{ item.spotify }}" target="_blank" rel="noopener"><i class="fab fa-spotify"></i> Spotify</a>{% endif %}
+      {% if item.apple and item.apple != "" %}<a href="{{ item.apple }}" target="_blank" rel="noopener"><i class="fas fa-podcast"></i> Apple Podcasts</a>{% endif %}
+      {% if item.youtube and item.youtube != "" %}<a href="{{ item.youtube }}" target="_blank" rel="noopener"><i class="fab fa-youtube"></i> YouTube</a>{% endif %}
+      {% if item.link and item.link != "" %}<a href="{{ item.link }}" target="_blank" rel="noopener"><i class="fas fa-headphones"></i> {{ t.listen }}</a>{% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}

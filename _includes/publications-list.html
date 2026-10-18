@@ -1,0 +1,43 @@
+{%- comment -%} Página de publicações: filtros por tipo + listas agrupadas por tipo, da mais recente para a mais antiga {%- endcomment -%}
+{%- include i18n.html -%}
+<h2 class="page-title">{{ t.pub_title }}</h2>
+<p class="page-intro">{{ t.pub_intro }}</p>
+{% if site.publicacoes.size == 0 %}
+<p class="meta">{{ t.no_pubs }}</p>
+{% else %}
+<nav class="content-tabs pub-filters" aria-label="{{ t.pub_title }}">
+<button type="button" class="active" data-filter="all">{{ t.all_types }} <small>{{ site.publicacoes.size }}</small></button>
+{%- for tp in t.pub_types -%}
+{%- assign _n = site.publicacoes | where: "tipo", tp[0] -%}
+{%- if _n.size > 0 %}
+<button type="button" data-filter="{{ tp[0] }}">{{ tp[1] }} <small>{{ _n.size }}</small></button>
+{%- endif -%}
+{%- endfor %}
+</nav>
+{% for tp in t.pub_types %}
+{%- assign _group = site.publicacoes | where: "tipo", tp[0] | sort: "ano" | reverse -%}
+{%- if _group.size > 0 %}
+<section class="pub-group" data-type="{{ tp[0] }}">
+<h3>{{ tp[1] }}</h3>
+<ol class="pub-list" reversed>
+{%- for pub in _group %}
+<li class="pub">{% include pub-entry.html pub=pub %}</li>
+{%- endfor %}
+</ol>
+</section>
+{%- endif -%}
+{% endfor %}
+<script>
+(function () {
+  var btns = document.querySelectorAll('.pub-filters button');
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      btns.forEach(function (x) { x.classList.toggle('active', x === b); });
+      document.querySelectorAll('.pub-group').forEach(function (g) {
+        g.hidden = b.dataset.filter !== 'all' && g.dataset.type !== b.dataset.filter;
+      });
+    });
+  });
+})();
+</script>
+{% endif %}

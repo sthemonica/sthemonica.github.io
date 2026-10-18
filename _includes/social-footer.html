@@ -1,0 +1,37 @@
+{%- comment -%} Cada ícone só aparece se o campo correspondente estiver preenchido no _config.yml {%- endcomment -%}
+<div class="rounded-social-buttons">
+  {%- if site.email and site.email != "" -%}
+  <a title="E-mail" class="social-button email" href="mailto:{{ site.email }}"><i class="far fa-envelope"></i></a>
+  {%- endif -%}
+  {%- if site.linkedin and site.linkedin != "" -%}
+  <a title="LinkedIn" class="social-button linkedin" href="https://www.linkedin.com/in/{{ site.linkedin }}" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+  {%- endif -%}
+  {%- if site.lattes and site.lattes != "" -%}
+  <a title="Currículo Lattes" class="social-button lattes" href="{{ site.lattes }}" target="_blank" rel="noopener"><span class="lattes-logo">L</span></a>
+  {%- endif -%}
+  {%- if site.google_scholar and site.google_scholar != "" -%}
+  <a title="Google Scholar" class="social-button scholar" href="{{ site.google_scholar }}" target="_blank" rel="noopener"><i class="fas fa-graduation-cap"></i></a>
+  {%- endif -%}
+  {%- if site.orcid and site.orcid != "" -%}
+  <a title="ORCID" class="social-button orcid" href="https://orcid.org/{{ site.orcid }}" target="_blank" rel="noopener"><i class="fab fa-orcid"></i></a>
+  {%- endif -%}
+  {%- if site.researchgate and site.researchgate != "" -%}
+  <a title="ResearchGate" class="social-button researchgate" href="https://www.researchgate.net/profile/{{ site.researchgate }}" target="_blank" rel="noopener"><i class="fab fa-researchgate"></i></a>
+  {%- endif -%}
+  {%- if site.github and site.github != "" -%}
+  <a title="GitHub" class="social-button github" href="https://github.com/{{ site.github }}" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+  {%- endif -%}
+  {%- if site.bluesky and site.bluesky != "" -%}
+  <a title="Bluesky" class="social-button bluesky" href="https://bsky.app/profile/{{ site.bluesky }}" target="_blank" rel="noopener"><i class="fab fa-bluesky"></i></a>
+  {%- endif -%}
+  {%- if site.instagram and site.instagram != "" -%}
+  <a title="Instagram" class="social-button instagram" href="https://www.instagram.com/{{ site.instagram }}" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+  {%- endif -%}
+  {%- if site.youtube and site.youtube != "" -%}
+  <a title="YouTube" class="social-button youtube" href="https://www.youtube.com/{{ site.youtube }}" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+  {%- endif -%}
+  {%- if site.spotify and site.spotify != "" -%}
+  <a title="Spotify" class="social-button spotify" href="{{ site.spotify }}" target="_blank" rel="noopener"><i class="fab fa-spotify"></i></a>
+  {%- endif -%}
+  <a title="CV" class="social-button cv" href="{{ t.nav[4].url | relative_url }}"><i class="far fa-file-lines"></i></a>
+</div>

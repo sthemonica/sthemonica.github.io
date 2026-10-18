@@ -1,0 +1,54 @@
+{%- comment -%} Grade de fotos. Parâmetro opcional: limit {%- endcomment -%}
+{%- include i18n.html -%}
+{%- assign _limit = include.limit | default: 1000 -%}
+
+{% assign itens = site.galeria | sort: "date" | reverse %}
+<div class="photo-gallery">
+  {% for item in itens limit: _limit %}
+  {%- assign _title = item.title -%}
+  {%- assign _desc = item.content | strip_html | strip -%}
+  {%- assign _local = item.local -%}
+  {%- if lang == "en" -%}
+    {%- if item.title_en and item.title_en != "" -%}{%- assign _title = item.title_en -%}{%- endif -%}
+    {%- if item.texto_en and item.texto_en != "" -%}{%- assign _desc = item.texto_en -%}{%- endif -%}
+    {%- if item.local_en and item.local_en != "" -%}{%- assign _local = item.local_en -%}{%- endif -%}
+  {%- endif -%}
+  <figure class="photo-card">
+    <button class="photo-open" data-src="{{ item.imagem | relative_url }}" data-title="{{ _title | escape }}" data-caption="{{ _desc | escape }}" aria-label="{{ t.zoom }}: {{ _title | escape }}">
+      <img src="{{ item.imagem | relative_url }}" alt="{{ _title | escape }}" loading="lazy">
+    </button>
+    <figcaption>
+      <strong>{{ _title }}</strong>
+      <small class="meta">{% if _local and _local != "" %}{{ _local }} · {% endif %}{% include data-pt.html date=item.date lang=lang %}</small>
+      {% if _desc != "" %}<span class="photo-desc">{{ _desc | truncatewords: 25 }}</span>{% endif %}
+      {% if item.linkedin and item.linkedin != "" %}<a class="photo-link" href="{{ item.linkedin }}" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> {{ t.see_linkedin_short }}</a>{% endif %}
+    </figcaption>
+  </figure>
+  {% endfor %}
+</div>
+
+<dialog class="lightbox" id="lightbox">
+  <button class="lightbox-close" aria-label="{{ t.close }}">&times;</button>
+  <img src="" alt="">
+  <p class="lightbox-caption"></p>
+</dialog>
+
+<script>
+  (function () {
+    var d = document.getElementById('lightbox');
+    if (!d || !d.showModal) return;
+    var img = d.querySelector('img'), cap = d.querySelector('.lightbox-caption');
+    document.querySelectorAll('.photo-open').forEach(function (b) {
+      b.addEventListener('click', function () {
+        img.src = b.dataset.src; img.alt = b.dataset.title;
+        cap.textContent = '';
+        var s = document.createElement('strong'); s.textContent = b.dataset.title + ' ';
+        cap.appendChild(s); cap.appendChild(document.createTextNode(b.dataset.caption));
+        d.showModal();
+      });
+    });
+    d.addEventListener('click', function (e) {
+      if (e.target === d || e.target.classList.contains('lightbox-close')) d.close();
+    });
+  })();
+</script>

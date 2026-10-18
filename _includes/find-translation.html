@@ -1,0 +1,10 @@
+{%- comment -%}
+  Procura a versão no outro idioma de include.item (mesmo valor de "ref").
+  Resultado na variável: translation (vazia se não houver).
+{%- endcomment -%}
+{%- assign translation = nil -%}
+{%- if include.item.ref and include.item.ref != "" -%}
+  {%- if include.item.lang == "en" -%}{%- assign _want = "pt" -%}{%- else -%}{%- assign _want = "en" -%}{%- endif -%}
+  {%- assign _all = site.pages | concat: site.posts | concat: site.projects -%}
+  {%- assign translation = _all | where: "ref", include.item.ref | where: "lang", _want | first -%}
+{%- endif -%}

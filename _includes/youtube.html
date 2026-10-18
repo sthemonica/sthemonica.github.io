@@ -1,0 +1,6 @@
+{%- comment -%}
+  Vídeo do YouTube dentro de um artigo ou página:
+  {% include youtube.html url="https://www.youtube.com/watch?v=XXXXXXXXXXX" %}
+{%- endcomment -%}
+{%- capture _yid -%}{% include youtube-id.html url=include.url %}{%- endcapture -%}
+<iframe class="embed-video" src="https://www.youtube-nocookie.com/embed/{{ _yid | strip }}" title="YouTube" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>

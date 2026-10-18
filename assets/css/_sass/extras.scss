@@ -1,0 +1,256 @@
+/* =========================================================
+   Extras: posts, galeria de fotos, LinkedIn e ajustes de menu
+   (usam as mesmas cores definidas em variables.scss)
+   ========================================================= */
+
+
+/* Cabeçalho */
+.site-name { color: inherit; }
+.site-name:hover { color: $brand-color; }
+.post-description { font-weight: 400; color: $light-gray; font-size: 1rem; }
+.navbar a { padding-bottom: 2px; border-bottom: 2px solid transparent; }
+.navbar a.active { color: $text-color; border-bottom-color: $brand-color;
+  @include dark { color: lighten($text-color-dark, 20%); }
+}
+header { margin-bottom: 1.5em; }
+
+.page-title { font-size: 1.6em; margin-bottom: 0; }
+.page-intro { color: $light-gray; margin-top: 0.2em; }
+.meta { color: $light-gray; }
+
+/* Tags */
+.tag {
+  display: inline-block; margin-left: 0.5em; padding: 0 0.6em;
+  border-radius: 999px; font-size: 0.8em;
+  background: $projectbox; color: $projectbox-text;
+  @include dark { background: darken($projectbox-dark, 35%); color: $text-color-dark; }
+}
+
+/* Lista de posts */
+.article-item { padding: 0.6em 0 1em; border-bottom: 1px solid rgba(128,128,128,.2); }
+.article-item:last-child { border-bottom: 0; }
+.article-item h2 { font-size: 1.3em; line-height: 1.4; }
+.article-item .meta { margin: 0.1em 0 0.3em; }
+.article-item p { margin: 0.3em 0; }
+
+/* Página inicial */
+.home-latest { clear: both; margin-top: 2em; padding-top: 1em; border-top: 1px solid rgba(128,128,128,.2); }
+.post-mini-list { padding-left: 1.2em; margin: 0.3em 0 0.6em; }
+.more-link { font-size: 0.9em; }
+
+/* Post */
+.post-cover { width: 100%; border-radius: 12px; margin: 1em 0; }
+.share { display: flex; flex-wrap: wrap; gap: 0.6em; margin-top: 2.5em; padding-top: 1.2em; border-top: 1px solid rgba(128,128,128,.2); }
+.share .simplebutton { margin: 0; font-size: 15px; padding: 10px 18px; }
+.share .simplebutton:hover { color: #fff; background: #007bb5; border-color: #007bb5; }
+.share .linkedin-btn { background: #007bb5; color: #fff; border-color: #007bb5; }
+.post-nav { display: flex; justify-content: space-between; gap: 1em; margin-top: 1.5em; font-size: 0.85em; }
+.pagination a, .pagination span { @include dark { border-color: rgba(255,255,255,.12); } }
+
+/* Galeria de fotos */
+.photo-gallery {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem; margin-top: 1.5em;
+}
+.photo-card {
+  border-radius: 15px; overflow: hidden;
+  background: lighten($projectbox, 8%);
+  @include dark { background: darken($projectbox-dark, 45%); }
+}
+.photo-open { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
+.photo-open img { display: block; width: 100%; aspect-ratio: unquote("4 / 3"); object-fit: cover; transition: transform .3s ease; }
+.photo-open:hover img { transform: scale(1.04); }
+.photo-card figcaption { display: flex; flex-direction: column; gap: 0.2em; padding: 0.8em 1em 1em; font-size: 0.8em; line-height: 1.5; }
+.photo-card strong { font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif; font-size: 1.1em; color: $projectbox-text;
+  @include dark { color: lighten($text-color-dark, 20%); }
+}
+.photo-link { margin-top: 0.3em; }
+
+.lightbox { border: 0; padding: 0; background: transparent; max-width: 92vw; }
+.lightbox::backdrop { background: rgba(15, 18, 22, .88); }
+.lightbox img { display: block; max-height: 80vh; max-width: 92vw; margin: 0 auto; border-radius: 12px; }
+.lightbox-caption { color: #eee; text-align: center; font-size: 0.85em; margin: 0.8em 0 0; }
+.lightbox-close { position: fixed; top: 12px; right: 20px; font-size: 2.4rem; line-height: 1; color: #fff; background: none; border: 0; cursor: pointer; }
+
+/* Novos ícones do rodapé */
+.rounded-social-buttons .social-button.lattes  { background: #1f4e8c; }
+.rounded-social-buttons .social-button.scholar { background: #4285f4; }
+.rounded-social-buttons .social-button.cv      { background: #c0392b; }
+.rounded-social-buttons .social-button.lattes:hover, .rounded-social-buttons .social-button.lattes:focus-visible { color: #1f4e8c; background: #fefefe; border-color: #1f4e8c; }
+.rounded-social-buttons .social-button.scholar:hover, .rounded-social-buttons .social-button.scholar:focus-visible { color: #4285f4; background: #fefefe; border-color: #4285f4; }
+.rounded-social-buttons .social-button.cv:hover, .rounded-social-buttons .social-button.cv:focus-visible { color: #c0392b; background: #fefefe; border-color: #c0392b; }
+.fa-graduation-cap, .fa-file-pdf { font-size: 20px; }
+.lattes-logo { font: 900 20px "Lato", sans-serif; }
+
+/* Celular */
+@media screen and (max-width: $on-palm) {
+  body { font-size: 17px; }
+  .photo-gallery { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1rem; }
+}
+
+/* Botões do cabeçalho: idioma e modo escuro */
+header { position: relative; }
+header .post-headline { padding-right: 130px; }
+.header-tools { position: absolute; top: 0.35em; right: 0; display: flex; align-items: center; gap: 0.6em; font-size: 0.8rem; }
+.lang-switch { color: $light-gray; letter-spacing: 0.04em; padding: 0.2em 0.5em; border: 1px solid rgba(128,128,128,.35); border-radius: 999px; }
+.lang-switch .on { color: $brand-color; font-weight: 600; }
+.lang-switch:hover { border-color: $brand-color; }
+.theme-toggle {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 2.1em; height: 2.1em; padding: 0; cursor: pointer;
+  border: 1px solid rgba(128,128,128,.35); border-radius: 50%; background: transparent; color: $text-color;
+  @include dark { color: $text-color-dark; }
+  &:hover { border-color: $brand-color; color: $brand-color; }
+  svg { width: 1.1em; height: 1.1em; fill: currentColor; stroke: currentColor; }
+  .icon-moon { stroke: none; }
+  .icon-sun { display: none; }
+  @include dark {
+    .icon-sun { display: block; }
+    .icon-moon { display: none; }
+  }
+}
+
+/* Avisos de tradução */
+.translation-note {
+  font-size: 0.75em; color: $light-gray; margin-bottom: 0.6em;
+  padding: 0.4em 0.8em; border-radius: 8px; background: rgba(128,128,128,.08);
+}
+.lang-badge {
+  display: inline-block; font-size: 0.75em; font-weight: 600; letter-spacing: 0.05em;
+  padding: 0 0.45em; border-radius: 4px; border: 1px solid $light-gray; color: $light-gray;
+}
+.article-item.other-lang h2 a { opacity: 0.85; }
+
+@media screen and (max-width: $on-palm) {
+  header .post-headline { padding-right: 0; margin-top: 1.6em; }
+}
+
+/* ===== Conteúdos: subabas ===== */
+.content-tabs { display: flex; flex-wrap: wrap; gap: 0.4em; margin: 0.4em 0 1.2em; }
+.content-tabs a {
+  font-size: 0.8em; padding: 0.25em 0.9em; border-radius: 999px;
+  border: 1px solid rgba(128,128,128,.35); color: inherit;
+}
+.content-tabs a:hover { border-color: $brand-color; color: $brand-color; }
+.content-tabs a.active { background: $brand-color; border-color: $brand-color; color: #fff; }
+.content-section { margin: 1.6em 0 2.2em; }
+.section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1em; border-bottom: 1px solid rgba(128,128,128,.2); margin-bottom: 0.6em; }
+.section-head a { font-size: 0.8em; }
+
+/* ===== Vídeos ===== */
+.video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 1.5rem; }
+.video-card { border-radius: 15px; overflow: hidden; background: lighten($projectbox, 8%);
+  @include dark { background: darken($projectbox-dark, 45%); }
+}
+.video-thumb { position: relative; display: block; width: 100%; padding: 0; border: 0; background: #000; cursor: pointer; aspect-ratio: unquote("16 / 9"); }
+.video-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: .92; transition: opacity .2s; }
+.video-thumb:hover img { opacity: 1; }
+.play-icon {
+  position: absolute; left: 50%; top: 50%; width: 58px; height: 40px; margin: -20px 0 0 -29px;
+  background: rgba(20,20,20,.75); border-radius: 12px; transition: background .2s;
+}
+.play-icon::after { content: ""; position: absolute; left: 23px; top: 11px; border-style: solid; border-width: 9px 0 9px 15px; border-color: transparent transparent transparent #fff; }
+.video-thumb:hover .play-icon { background: #e62117; }
+.video-frame { display: block; width: 100%; aspect-ratio: unquote("16 / 9"); border: 0; }
+.video-info { display: flex; flex-direction: column; gap: 0.2em; padding: 0.8em 1em 1em; font-size: 0.8em; line-height: 1.5; }
+.video-info strong { font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif; font-size: 1.1em; color: $projectbox-text;
+  @include dark { color: lighten($text-color-dark, 20%); }
+}
+.video-link { margin-top: 0.3em; }
+.youtube-btn { margin-top: 1.5em; }
+.youtube-btn:hover { background: #e62117; border-color: #e62117; color: #fff; }
+
+/* ===== Podcasts ===== */
+.podcast-list { display: flex; flex-direction: column; gap: 1.2rem; }
+.podcast-card { border-radius: 15px; padding: 1em 1.2em; background: lighten($projectbox, 8%);
+  @include dark { background: darken($projectbox-dark, 45%); }
+}
+.podcast-head { display: flex; align-items: center; gap: 0.8em; line-height: 1.4; }
+.podcast-head strong { display: block; font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif; color: $projectbox-text;
+  @include dark { color: lighten($text-color-dark, 20%); }
+}
+.podcast-icon { flex: none; display: inline-flex; align-items: center; justify-content: center; width: 2.4em; height: 2.4em; border-radius: 50%; background: $brand-color; color: #fff; font-size: 0.9em; }
+.podcast-desc { font-size: 0.85em; margin: 0.6em 0; }
+.spotify-embed { width: 100%; border: 0; border-radius: 12px; margin: 0.4em 0; display: block; }
+.podcast-links { display: flex; flex-wrap: wrap; gap: 1em; font-size: 0.8em; margin-top: 0.3em; }
+
+/* ===== CV ===== */
+.cv-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.8em; margin-bottom: 1.5em; }
+.cv-actions .simplebutton { margin: 0; font-size: 15px; padding: 10px 18px; }
+.cv-actions .simplebutton:hover { background: $brand-color; border-color: $brand-color; color: #fff; }
+.cv-actions small { font-size: 0.7em; }
+.cv-head { margin-bottom: 0.5em; }
+.cv-head h1 { font-size: 1.8em; line-height: 1.2; }
+.cv-role { margin: 0.2em 0; }
+.cv-contacts { font-size: 0.8em; color: $light-gray; margin: 0.2em 0 0; }
+.cv-contacts a, .cv p.cv-contacts a { background: none; color: inherit; }
+.cv h2 {
+  font-size: 0.95em; text-transform: uppercase; letter-spacing: 0.08em; color: $brand-color;
+  border-bottom: 2px solid $brand-color; margin: 1.6em 0 0.5em; line-height: 1.6;
+}
+.cv h3 { font-size: 1em; line-height: 1.4; margin-top: 0.9em; }
+.cv h3 + p { margin: 0; font-size: 0.85em; color: $light-gray; }
+.cv ul { margin: 0.3em 0 0.6em; padding-left: 1.2em; }
+.cv p, .cv li { font-size: 0.9em; }
+
+/* ===== Impressão / PDF ===== */
+@page { margin: 15mm 16mm; }
+@media print {
+  html, body, html[data-theme] body { background: #fff !important; color: #111 !important; }
+  body { max-width: none; padding: 0; font-size: 10.5pt; min-height: 0; display: block; }
+  header, footer, .cv-actions, .translation-note, .share, .post-nav, .header-tools, .content-tabs { display: none !important; }
+  a, p a { color: #111 !important; background: none !important; box-shadow: none !important; }
+  .cv h2 { color: #111; border-color: #111; break-after: avoid; page-break-after: avoid; }
+  .cv h3 { break-after: avoid; page-break-after: avoid; }
+  .cv h3 + p, .cv li { break-inside: avoid; page-break-inside: avoid; }
+  .cv-contacts { color: #444; }
+}
+
+/* Novos ícones do rodapé */
+.rounded-social-buttons .social-button.youtube { background: #e62117; }
+.rounded-social-buttons .social-button.spotify { background: #1db954; }
+.rounded-social-buttons .social-button.youtube:hover, .rounded-social-buttons .social-button.youtube:focus-visible { color: #e62117; background: #fefefe; border-color: #e62117; }
+.rounded-social-buttons .social-button.spotify:hover, .rounded-social-buttons .social-button.spotify:focus-visible { color: #1db954; background: #fefefe; border-color: #1db954; }
+.fa-youtube, .fa-spotify, .fa-file-lines { font-size: 21px; }
+.video-link .fa-youtube, .podcast-links .fa-spotify, .youtube-btn .fa-youtube { font-size: inherit; }
+
+/* ===== Publicações ===== */
+.pub-filters button {
+  font: inherit; font-size: 0.8em; padding: 0.25em 0.9em; border-radius: 999px; cursor: pointer;
+  border: 1px solid rgba(128,128,128,.35); color: inherit; background: transparent;
+}
+.pub-filters button:hover { border-color: $brand-color; color: $brand-color; }
+.pub-filters button.active { background: $brand-color; border-color: $brand-color; color: #fff; }
+.pub-filters small { opacity: .7; margin-left: 0.2em; }
+.pub-group { margin: 1.4em 0 2em; }
+.pub-group h3 { border-bottom: 1px solid rgba(128,128,128,.2); margin-bottom: 0.4em; }
+.pub-list { padding-left: 1.6em; margin: 0; }
+.pub { margin: 0 0 1em; padding-left: 0.3em; line-height: 1.5; }
+.pub::marker { color: $light-gray; font-size: 0.85em; }
+.pub-title { display: block; font-weight: 600; }
+.pub-title a { color: inherit; }
+.pub-title a:hover { color: $brand-color; }
+.pub-authors, .pub-venue { display: block; font-size: 0.85em; }
+.pub-venue { color: $light-gray; }
+.pub-status { display: inline-block; font-size: 0.85em; padding: 0 0.5em; border-radius: 4px; background: $projectbox; color: $projectbox-text; font-style: normal; }
+.pub-links { display: flex; flex-wrap: wrap; gap: 0.4em; margin-top: 0.35em; }
+.pub-links a {
+  font-size: 0.7em; font-weight: 600; letter-spacing: 0.03em; padding: 0.1em 0.7em; border-radius: 4px;
+  border: 1px solid $brand-color; color: $brand-color;
+}
+.pub-links a:hover { background: $brand-color; color: #fff; }
+.pub-abstract { font-size: 0.85em; margin-top: 0.4em; }
+.pub-abstract summary { cursor: pointer; color: $brand-color; font-size: 0.85em; }
+.pub-abstract p { margin: 0.4em 0; }
+.pub-group[hidden] { display: none; }
+.cv .pub-list { padding-left: 1.4em; }
+.cv .pub { margin-bottom: 0.5em; font-size: 0.9em; }
+.cv .pub-title { font-weight: 600; }
+@media print { .pub-links, .pub-abstract { display: none !important; } }
+
+/* Vídeo do YouTube dentro de artigos */
+.embed-video { display: block; width: 100%; aspect-ratio: unquote("16 / 9"); border: 0; border-radius: 12px; margin: 1em 0; }
+
+/* Legenda de imagem: ![...](...) seguido de *legenda* na linha de baixo */
+article p > img + em { display: block; text-align: center; font-size: 0.8em; color: $light-gray; margin-top: 0.3em; }
+article p > img { display: block; margin: 0 auto; border-radius: 8px; }

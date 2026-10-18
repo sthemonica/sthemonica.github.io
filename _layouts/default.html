@@ -1,0 +1,86 @@
+---
+---
+{%- include i18n.html -%}
+{%- include find-translation.html item=page -%}
+<!DOCTYPE html>
+<html lang="{% if lang == 'en' %}en{% else %}pt-BR{% endif %}">
+
+<head>
+  <meta charset="utf-8">
+  <!-- Aplica o tema escolhido (claro/escuro) antes de desenhar a página -->
+  <script>try { var _t = localStorage.getItem('theme'); if (_t) document.documentElement.setAttribute('data-theme', _t); } catch (e) {}</script>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  {% seo %}
+  {% feed_meta %}
+  {% if translation %}
+  <link rel="alternate" hreflang="{{ lang }}" href="{{ page.url | absolute_url }}">
+  <link rel="alternate" hreflang="{{ other }}" href="{{ translation.url | absolute_url }}">
+  {% endif %}
+  {% include favicon.html %}
+  {% include mathjax.html %}
+
+  <!-- Font Awesome (ícones do rodapé) -->
+  <script type="text/javascript">
+    (function () {
+      var css = document.createElement('link');
+      css.href = 'https://use.fontawesome.com/releases/v6.7.2/css/all.css';
+      css.rel = 'stylesheet';
+      var showIcons = function () { document.body.classList.add('fontawesome-loaded'); };
+      css.onload = showIcons; css.onerror = showIcons; setTimeout(showIcons, 1500);
+      document.getElementsByTagName('head')[0].appendChild(css);
+    })();
+  </script>
+</head>
+
+<body>
+  {% unless layout.hide_header_nav or page.hide_header_nav %}
+  <header>
+    {% include header-tools.html %}
+    <h1 class="post-headline"><a class="site-name" href="{{ t.home_url | relative_url }}">{{ site.title }}</a></h1>
+    <h3 class="post-description">{% if lang == "en" and site.description_en %}{{ site.description_en }}{% else %}{{ site.description }}{% endif %}</h3>
+    {% include navigation.html %}
+  </header>
+  {% endunless %}
+
+  <main>
+    <article>
+      {{ content }}
+    </article>
+  </main>
+
+  <footer>
+    {% unless layout.hide_social_footer or page.hide_social_footer %}
+    {% include social-footer.html %}
+    {% endunless %}
+
+    <p class="copy">
+      <small>&copy; {{ site.title }} {{ site.time | date: '%Y' }}
+        · {{ t.made_with }}
+        <a target="_blank" rel="noopener" href="https://github.com/jitinnair1/gradfolio/">Gradfolio</a>
+        · {{ t.updated }} {% include data-pt.html date=site.time lang=lang %}
+      </small>
+    </p>
+  </footer>
+
+  {% if site.analytics and site.analytics != "" %}{% include analytics.html %}{% endif %}
+
+  <script>
+    (function () {
+      var root = document.documentElement, btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var mq = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+      function current() { return root.getAttribute('data-theme') || (mq && mq.matches ? 'dark' : 'light'); }
+      function label() { btn.setAttribute('aria-label', current() === 'dark' ? btn.dataset.light : btn.dataset.dark); btn.title = btn.getAttribute('aria-label'); }
+      label();
+      btn.addEventListener('click', function () {
+        var next = current() === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        try { localStorage.setItem('theme', next); } catch (e) {}
+        label();
+      });
+    })();
+  </script>
+</body>
+
+</html>

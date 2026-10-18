@@ -1,0 +1,49 @@
+{%- comment -%} Grade de vídeos do YouTube. Parâmetro opcional: limit {%- endcomment -%}
+{%- include i18n.html -%}
+{%- assign _videos = site.videos | sort: "date" | reverse -%}
+{%- assign _limit = include.limit | default: 1000 -%}
+{% if _videos.size == 0 %}
+  <p class="meta">{{ t.no_videos }}</p>
+{% else %}
+<div class="video-grid">
+  {% for item in _videos limit: _limit %}
+  {%- capture _id -%}{% include youtube-id.html url=item.youtube %}{%- endcapture -%}
+  {%- assign _id = _id | strip -%}
+  {%- assign _title = item.title -%}
+  {%- assign _desc = item.content | strip_html | strip -%}
+  {%- if lang == "en" -%}
+    {%- if item.title_en and item.title_en != "" -%}{%- assign _title = item.title_en -%}{%- endif -%}
+    {%- if item.texto_en and item.texto_en != "" -%}{%- assign _desc = item.texto_en -%}{%- endif -%}
+  {%- endif -%}
+  <div class="video-card">
+    <button class="video-thumb" type="button" data-id="{{ _id }}" aria-label="{{ t.play }}: {{ _title | escape }}">
+      <img src="https://i.ytimg.com/vi/{{ _id }}/hqdefault.jpg" alt="" loading="lazy" onerror="this.style.visibility='hidden'">
+      <span class="play-icon" aria-hidden="true"></span>
+    </button>
+    <div class="video-info">
+      <strong>{{ _title }}</strong>
+      <small class="meta">{% include data-pt.html date=item.date lang=lang %}{% if item.idioma and item.idioma != lang %} · <span class="lang-badge" title="{{ t.in_other_lang }}">{{ item.idioma | upcase }}</span>{% endif %}</small>
+      {% if _desc != "" %}<span class="video-desc">{{ _desc | truncatewords: 25 }}</span>{% endif %}
+      <a class="video-link" href="https://www.youtube.com/watch?v={{ _id }}" target="_blank" rel="noopener"><i class="fab fa-youtube"></i> {{ t.watch_youtube }}</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+<script>
+  // Carrega o player só quando a pessoa clica (o site fica mais rápido)
+  document.querySelectorAll('.video-thumb').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(b.dataset.id) + '?autoplay=1&rel=0';
+      f.title = b.getAttribute('aria-label');
+      f.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen';
+      f.allowFullscreen = true;
+      f.className = 'video-frame';
+      b.replaceWith(f);
+    });
+  });
+</script>
+{% endif %}
+{% if include.channel and site.youtube and site.youtube != "" %}
+<p><a class="simplebutton youtube-btn" href="https://www.youtube.com/{{ site.youtube }}" target="_blank" rel="noopener"><i class="fab fa-youtube"></i> {{ t.youtube_channel }}</a></p>
+{% endif %}

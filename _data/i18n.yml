@@ -1,0 +1,156 @@
+# Textos da interface em cada idioma.
+# Para mudar os nomes das abas do menu, edite "nav".
+pt:
+  home_url: /
+  nav:
+    - { key: home,     title: "Início",           url: "/" }
+    - { key: research, title: "Pesquisa",         url: "/pesquisa/" }
+    - { key: publications, title: "Publicações", url: "/publicacoes/" }
+    - { key: content,  title: "Conteúdos",        url: "/conteudos/" }
+    - { key: cv,       title: "CV",               url: "/cv/" }
+  research_url: /pesquisa/
+  # Subabas de "Conteúdos"
+  content_title: "Conteúdos"
+  content_intro: "Artigos, vídeos, podcasts e fotos de momentos que quero compartilhar."
+  content_tabs:
+    - { key: overview, title: "Tudo",     url: "/conteudos/" }
+    - { key: articles, title: "Artigos",  url: "/conteudos/artigos/" }
+    - { key: videos,   title: "Vídeos",   url: "/conteudos/videos/" }
+    - { key: podcasts, title: "Podcasts", url: "/conteudos/podcasts/" }
+    - { key: gallery,  title: "Galeria de fotos", url: "/conteudos/galeria/" }
+  articles_url: /conteudos/artigos/
+  gallery_url: /conteudos/galeria/
+  videos_url: /conteudos/videos/
+  podcasts_url: /conteudos/podcasts/
+  see_all: "Ver todos →"
+  latest_posts: "Últimos artigos"
+  all_posts: "Ver todos os artigos →"
+  no_posts: "Nenhum artigo ainda."
+  no_videos: "Nenhum vídeo ainda."
+  no_podcasts: "Nenhum episódio ainda."
+  watch_youtube: "Assistir no YouTube"
+  play: "Reproduzir"
+  youtube_channel: "Ver o canal no YouTube"
+  listen: "Ouvir episódio"
+  in_other_lang: "Conteúdo em inglês"
+  # Publicações
+  pub_title: "Publicações"
+  pub_intro: "Artigos, trabalhos em congressos e outras produções acadêmicas."
+  no_pubs: "Nenhuma publicação ainda."
+  all_types: "Todas"
+  pub_types:
+    artigo: "Artigos em periódicos"
+    conferencia: "Trabalhos em congressos"
+    capitulo: "Capítulos de livro"
+    preprint: "Preprints"
+    tese: "Teses e dissertações"
+    outro: "Outras produções"
+  abstract: "Resumo"
+  code: "Código"
+  data: "Dados"
+  slides: "Slides"
+  poster: "Pôster"
+  # CV
+  cv_download: "Baixar PDF"
+  cv_hint: "Na janela que abrir, escolha \"Salvar como PDF\" como destino (e desmarque \"Cabeçalhos e rodapés\" para um PDF mais limpo)."
+  min_read: "min de leitura"
+  share_linkedin: "Compartilhar no LinkedIn"
+  see_linkedin: "Ver a discussão no LinkedIn"
+  see_linkedin_short: "Ver no LinkedIn"
+  back_research: "← Voltar para Pesquisa"
+  research_intro: "Passe o mouse sobre um projeto para ver o resumo; clique para ler mais."
+  gallery_title: "Galeria de fotos"
+  gallery_intro: "Congressos, conquistas e momentos que quero compartilhar."
+  only_other: "Disponível só em inglês"
+  auto_translate: "ler com tradução automática"
+  # Os dois textos abaixo aparecem em páginas em PORTUGUÊS, mas são escritos
+  # em INGLÊS, pois são um convite para quem lê em inglês.
+  other_version: "This article is also available in English:"
+  translate_cta: "Read in English (automatic translation)"
+  switch_label: "EN"
+  switch_title: "Read in English"
+  theme_dark: "Ativar modo escuro"
+  theme_light: "Ativar modo claro"
+  updated: "Atualizado em"
+  made_with: "Feito com Jekyll e"
+  photo_of: "Foto de"
+  zoom: "Ampliar"
+  close: "Fechar"
+  not_found: "Ops! Essa página não existe (ou mudou de lugar)."
+  go_home: "Voltar para o início"
+  months: [janeiro, fevereiro, março, abril, maio, junho, julho, agosto, setembro, outubro, novembro, dezembro]
+
+en:
+  home_url: /en/
+  nav:
+    - { key: home,     title: "Home",          url: "/en/" }
+    - { key: research, title: "Research",      url: "/en/research/" }
+    - { key: publications, title: "Publications", url: "/en/publications/" }
+    - { key: content,  title: "Content",       url: "/en/content/" }
+    - { key: cv,       title: "CV",            url: "/en/cv/" }
+  research_url: /en/research/
+  content_title: "Content"
+  content_intro: "Articles, videos, podcasts and photos of moments I want to share."
+  content_tabs:
+    - { key: overview, title: "All",      url: "/en/content/" }
+    - { key: articles, title: "Articles", url: "/en/content/articles/" }
+    - { key: videos,   title: "Videos",   url: "/en/content/videos/" }
+    - { key: podcasts, title: "Podcasts", url: "/en/content/podcasts/" }
+    - { key: gallery,  title: "Photo gallery", url: "/en/content/gallery/" }
+  articles_url: /en/content/articles/
+  gallery_url: /en/content/gallery/
+  videos_url: /en/content/videos/
+  podcasts_url: /en/content/podcasts/
+  see_all: "See all →"
+  latest_posts: "Latest articles"
+  all_posts: "See all articles →"
+  no_posts: "No articles yet."
+  no_videos: "No videos yet."
+  no_podcasts: "No episodes yet."
+  watch_youtube: "Watch on YouTube"
+  play: "Play"
+  youtube_channel: "Visit the YouTube channel"
+  listen: "Listen to the episode"
+  in_other_lang: "Content in Portuguese"
+  pub_title: "Publications"
+  pub_intro: "Journal articles, conference papers and other academic output."
+  no_pubs: "No publications yet."
+  all_types: "All"
+  pub_types:
+    artigo: "Journal articles"
+    conferencia: "Conference papers"
+    capitulo: "Book chapters"
+    preprint: "Preprints"
+    tese: "Theses"
+    outro: "Other output"
+  abstract: "Abstract"
+  code: "Code"
+  data: "Data"
+  slides: "Slides"
+  poster: "Poster"
+  cv_download: "Download PDF"
+  cv_hint: "In the dialog that opens, choose \"Save as PDF\" as the destination (and untick \"Headers and footers\" for a cleaner PDF)."
+  min_read: "min read"
+  share_linkedin: "Share on LinkedIn"
+  see_linkedin: "See the discussion on LinkedIn"
+  see_linkedin_short: "See on LinkedIn"
+  back_research: "← Back to Research"
+  research_intro: "Hover over a project to see a summary; click to read more."
+  gallery_title: "Photo gallery"
+  gallery_intro: "Conferences, milestones and moments I want to share."
+  only_other: "Available in Portuguese only"
+  auto_translate: "read with automatic translation"
+  other_version: "Este texto também está disponível em português:"
+  translate_cta: "Ler em português (tradução automática)"
+  switch_label: "PT"
+  switch_title: "Ler em português"
+  theme_dark: "Switch to dark mode"
+  theme_light: "Switch to light mode"
+  updated: "Last updated on"
+  made_with: "Built with Jekyll and"
+  photo_of: "Photo of"
+  zoom: "Enlarge"
+  close: "Close"
+  not_found: "Oops! This page doesn't exist (or has moved)."
+  go_home: "Back to home"
+  months: [January, February, March, April, May, June, July, August, September, October, November, December]
