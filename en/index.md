@@ -9,14 +9,24 @@ profile:
   image: perfil.jpg
 ---
 
-Hi! I'm **Sthefanie**. Write a short introduction here: what you research,
-where you are and what drives you. Two or three paragraphs usually work well.
+Hi! I'm **Sthefanie**, a PhD student at
+**Constructor University** in Bremen, Germany.
 
-For example: I'm a PhD candidate in **[your field]** at **[university]**, where I
-study **[topic]**. Before that, I did **[previous degree]**.
+My research sits at the intersection of computing and society. I work on
+**computational social science**, using
+data-driven methods to analyze communication and to understand
+**gender differences in tech**.
 
-### Interests
+Before my PhD, I earned a **Master's degree in Electrical Engineering** at the
+Federal University of Technology – Paraná (UTFPR), Brazil, with a focus on
+artificial intelligence and XAI. I then worked as a **Data Scientist** at several
+companies, applying machine learning to real-world problems. 
 
-- Research topic 1
-- Research topic 2
-- Science communication
+I also love teaching and sharing knowledge, here and on my channels.
+
+### Research interests
+
+- Computational social science
+- Explainable AI (XAI)
+- Communication analysis
+- Gender differences in tech

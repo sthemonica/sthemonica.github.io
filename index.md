@@ -1,22 +1,32 @@
 ---
 layout: about
 permalink: /pt/
-profile:
-  align: right
-  image: perfil.jpg
 lang: pt
 ref: home
 section: home
+profile:
+  align: right
+  image: perfil.jpg
 ---
 
-Olá! Eu sou a **Sthefanie**. Escreva aqui uma apresentação curta: o que você
-pesquisa, onde está e o que te move. Dois ou três parágrafos costumam funcionar bem.
+Oie! Eu sou a **Sthefanie**, doutoranda na
+**Constructor University**, em Bremen, na Alemanha.
 
-Por exemplo: sou doutoranda em **[sua área]** na **[universidade]**, onde investigo
-**[tema]**. Antes disso, fiz **[formação anterior]**.
+Trabalho com
+**ciência social computacional**, usando
+métodos baseados em dados para analisar a comunicação e entender as
+**diferenças de gênero na área de tecnologia**.
 
-### Interesses
+Antes do doutorado, fiz **mestrado em Engenharia Elétrica** na
+Universidade Tecnológica Federal do Paraná (UTFPR), com foco em
+inteligência artificial e XAI. Depois, atuei como **Cientista de Dados** em várias
+empresas, aplicando machine learning a problemas reais.
 
-- Tema de pesquisa 1
-- Tema de pesquisa 2
-- Divulgação científica
+Também adoro ensinar e compartilhar conhecimento, aqui e nos meus canais.
+
+### Interesses de pesquisa
+
+- Ciência social computacional
+- IA explicável (XAI)
+- Análise de comunicação
+- Diferenças de gênero na tecnologia

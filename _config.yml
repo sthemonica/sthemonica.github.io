@@ -4,9 +4,9 @@
 # =========================================================
 
 # Cabeçalho
-title: "Sthefanie Sobrenome"
-description: "Doutoranda em [área] | [Universidade] | Bremen, Alemanha"
-description_en: "PhD candidate in [field] | [University] | Bremen, Germany"
+title: "Sthefanie Monica Premebida"
+description: "Doutoranda em Ciência Social Computacional | Constructor University | Bremen, Alemanha"
+description_en: "PhD at Computational Social Science | Constructor University | Bremen, Germany"
 # Os nomes das abas do menu ficam em _data/i18n.yml
 
 # Se o repositório se chamar  SEU-USUARIO.github.io  deixe baseurl vazio.
@@ -15,22 +15,22 @@ baseurl: ""
 
 # Na aba Publicações, este nome aparece em negrito na lista de autores
 # (escreva exatamente como aparece nas suas publicações):
-destaque_nome: "Sobrenome S"
+destaque_nome: "Premebida, S"
 
 # ---------- Ícones do rodapé ----------
 # Coloque só o SEU USUÁRIO (não o link inteiro). Deixe vazio para esconder.
-email: "seu-email@exemplo.com"
-linkedin: "SEU-PERFIL"          # linkedin.com/in/SEU-PERFIL
-github: ""
-researchgate: ""                # researchgate.net/profile/USUARIO
-orcid: ""                       # ex.: 0000-0002-1825-0097
-instagram: ""
-youtube: ""                     # ex.: @meucanal  (youtube.com/@meucanal)
+email: "spremebida@constructor.university"
+linkedin: "https://www.linkedin.com/in/sthemonica/"          # linkedin.com/in/SEU-PERFIL
+github: "sthemonica"
+researchgate: "https://www.researchgate.net/profile/Sthefanie-Premebida-2"                # researchgate.net/profile/USUARIO
+orcid: "0000-0002-8964-2119"                       # ex.: 0000-0002-1825-0097
+instagram: "https://www.instagram.com/sthemonica"
+youtube: "@canalifelse"                     # ex.: @meucanal  (youtube.com/@meucanal)
 spotify: ""                     # opcional: link completo do seu podcast no Spotify
 bluesky: ""
 # Estes três recebem o LINK COMPLETO:
 lattes: ""                      # ex.: http://lattes.cnpq.br/1234567890123456
-google_scholar: ""              # link do seu perfil no Google Scholar
+google_scholar: "https://scholar.google.com/citations?user=AVknaoYAAAAJ&hl=en&oi=ao"              # link do seu perfil no Google Scholar
 # CV: a aba "CV" gera o PDF a partir de cv.md. Se preferir oferecer um PDF
 # pronto (feito no Word, Canva, LaTeX...), envie para assets/files/ e preencha:
 cv_pdf: ""                      # ex.: /assets/files/CV.pdf
