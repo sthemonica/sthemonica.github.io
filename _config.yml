@@ -20,11 +20,11 @@ destaque_nome: "Premebida, S"
 # ---------- Ícones do rodapé ----------
 # Coloque só o SEU USUÁRIO (não o link inteiro). Deixe vazio para esconder.
 email: "spremebida@constructor.university"
-linkedin: "https://www.linkedin.com/in/sthemonica/"          # linkedin.com/in/SEU-PERFIL
+linkedin: "sthemonica"          # linkedin.com/in/SEU-PERFIL
 github: "sthemonica"
-researchgate: "https://www.researchgate.net/profile/Sthefanie-Premebida-2"                # researchgate.net/profile/USUARIO
+researchgate: "Sthefanie-Premebida-2"                # researchgate.net/profile/USUARIO
 orcid: "0000-0002-8964-2119"                       # ex.: 0000-0002-1825-0097
-instagram: "https://www.instagram.com/sthemonica"
+instagram: "sthemonica"
 youtube: "@canalifelse"                     # ex.: @meucanal  (youtube.com/@meucanal)
 spotify: ""                     # opcional: link completo do seu podcast no Spotify
 bluesky: ""
