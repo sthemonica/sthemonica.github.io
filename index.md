@@ -19,10 +19,10 @@ métodos baseados em dados para analisar a comunicação e entender as
 
 Antes do doutorado, fiz **mestrado em Engenharia Elétrica** na
 Universidade Tecnológica Federal do Paraná (UTFPR), com foco em
-inteligência artificial e XAI. Depois, atuei como **Cientista de Dados** em várias
+inteligência artificial e XAI. Também já atuei como **Cientista de Dados** em várias
 empresas, aplicando machine learning a problemas reais.
 
-Também adoro ensinar e compartilhar conhecimento, aqui e nos meus canais.
+Adoro ensinar e compartilhar conhecimento, aqui e nos meus canais! Se quiser falar comigo, pode me contatar e será um prazer conversarmos :)
 
 ### Interesses de pesquisa
 

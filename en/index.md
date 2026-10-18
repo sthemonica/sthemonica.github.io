@@ -19,10 +19,10 @@ data-driven methods to analyze communication and to understand
 
 Before my PhD, I earned a **Master's degree in Electrical Engineering** at the
 Federal University of Technology – Paraná (UTFPR), Brazil, with a focus on
-artificial intelligence and XAI. I then worked as a **Data Scientist** at several
+artificial intelligence and XAI. I also worked as a **Data Scientist** at several
 companies, applying machine learning to real-world problems. 
 
-I also love teaching and sharing knowledge, here and on my channels.
+I love teaching and sharing knowledge, here and on my channels. So if you want connect or talk with me, feel free to do this! :)
 
 ### Research interests
 
