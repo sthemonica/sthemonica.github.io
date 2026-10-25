@@ -21,7 +21,8 @@
   <ul class="post-mini-list">
   {% for post in _shown limit: _limit %}
     <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      <small class="meta">— {% include data-pt.html date=post.date lang=lang %}{% if post.lang != lang %} · <span class="lang-badge">{{ post.lang | upcase }}</span>{% endif %}</small></li>
+      <small class="meta">— {% include data-pt.html date=post.date lang=lang %}{% if post.lang != lang %} · <span class="lang-badge">{{ post.lang | upcase }}</span>{% endif %}</small>
+      {% include tag-list.html tags=post.tags %}</li>
   {% endfor %}
   </ul>
 {% else %}
@@ -29,12 +30,13 @@
   {% for post in _shown limit: _limit %}
     <div class="article-item{% if post.lang != lang %} other-lang{% endif %}">
       <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-      <p class="meta"><small>{% include data-pt.html date=post.date lang=lang %}{% for tg in post.tags %}<span class="tag">{{ tg }}</span>{% endfor %}
+      <p class="meta"><small>{% include data-pt.html date=post.date lang=lang %}
         {% if post.lang != lang %}
           {% capture _tr %}{% include auto-translate-url.html item=post from=post.lang to=lang %}{% endcapture %}
           <span class="lang-badge">{{ post.lang | upcase }}</span> {{ t.only_other }} · <a href="{{ _tr | strip }}" target="_blank" rel="noopener">{{ t.auto_translate }}</a>
         {% endif %}
       </small></p>
+      {% include tag-list.html tags=post.tags %}
       {% if post.resumo and post.resumo != "" %}<p>{{ post.resumo }}</p>
       {% else %}<p>{{ post.excerpt | strip_html | truncatewords: 40 }}</p>{% endif %}
     </div>

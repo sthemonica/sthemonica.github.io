@@ -3,6 +3,7 @@ title: "Prêmio de melhor trabalho"
 date: 2026-06-15
 local: "São Paulo, Brasil"
 imagem: "/assets/images/galeria/exemplo-premio.jpg"
+status: [premio]          # veja status_fotos em _data/tags.yml
 title_en: "Best paper award"
 texto_en: "Short description of the achievement."
 local_en: "São Paulo, Brazil"

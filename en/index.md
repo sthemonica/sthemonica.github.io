@@ -30,3 +30,4 @@ I love teaching and sharing knowledge, here and on my channels. So if you want c
 - Explainable AI (XAI)
 - Communication analysis
 - Gender differences in tech
+{: .interest-tags}

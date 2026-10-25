@@ -4,6 +4,7 @@ date: 2026-11-05               # data do evento (ANO-MES-DIA)
 local: "Cidade, País"          # opcional
 imagem: "/assets/images/galeria/nome-da-foto.jpg"
 linkedin: ""                   # opcional: link do post no LinkedIn
+status: [phd, palestra]        # opcional: phd, mestrado, workshop, palestra... (_data/tags.yml)
 # Versão em inglês (opcional; se ficar vazio, mostra o texto em português)
 title_en: ""
 local_en: ""

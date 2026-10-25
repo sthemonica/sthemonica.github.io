@@ -9,7 +9,7 @@ layout: default
 {{ content }}
 
 <div class="home-latest">
-  <h3>{{ t.latest_posts }}</h3>
-  {% include posts-list.html limit=3 compact=true %}
-  <a class="more-link" href="{{ t.articles_url | relative_url }}">{{ t.all_posts }}</a>
+  <h3>{{ t.latest_content }}</h3>
+  {% include latest-content.html limit=4 %}
+  <a class="more-link" href="{{ t.content_tabs[0].url | relative_url }}">{{ t.all_content }}</a>
 </div>

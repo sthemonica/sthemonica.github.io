@@ -7,4 +7,6 @@ tipo: capitulo
 doi: ""
 link: ""
 pdf: ""
+status: "aceito"
+idioma: en           # pt = Português | en = Inglês
 ---

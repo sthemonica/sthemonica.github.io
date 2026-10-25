@@ -12,7 +12,7 @@
 {%- assign _main = _doi -%}{%- if _main == "" and _p.link -%}{%- assign _main = _p.link -%}{%- endif -%}
 <span class="pub-title">{% if _main and _main != "" %}<a href="{{ _main }}" target="_blank" rel="noopener">{{ _p.title }}</a>{% else %}{{ _p.title }}{% endif %}</span>
 <span class="pub-authors">{{ _authors }}</span>
-<span class="pub-venue">{% if _p.veiculo and _p.veiculo != "" %}<em>{{ _p.veiculo }}</em>, {% endif %}{{ _p.ano }}.{% if _p.status and _p.status != "" %} <span class="pub-status">{{ _p.status }}</span>{% endif %}</span>
+<span class="pub-venue">{% if _p.veiculo and _p.veiculo != "" %}<em>{{ _p.veiculo }}</em>, {% endif %}{{ _p.ano }}.{% if _p.status and _p.status != "" %} <span class="pub-status">{{ t.status_labels[_p.status] | default: _p.status }}</span>{% endif %}{% if _p.idioma and _p.idioma != "" %}<span class="tag">{{ t.languages[_p.idioma] | default: _p.idioma }}</span>{% endif %}</span>
 {%- unless include.compact %}
 <span class="pub-links">
 {%- if _doi != "" %}<a href="{{ _doi }}" target="_blank" rel="noopener">DOI</a>{% endif -%}

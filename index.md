@@ -30,3 +30,4 @@ Adoro ensinar e compartilhar conhecimento, aqui e nos meus canais! Se quiser fal
 - IA explicável (XAI)
 - Análise de comunicação
 - Diferenças de gênero na tecnologia
+{: .interest-tags}

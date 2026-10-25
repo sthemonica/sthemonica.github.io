@@ -1,7 +1,7 @@
 ---
 title: "Título do seu texto"
 resumo: "Uma ou duas frases que aparecem na lista de posts (opcional)."
-tags: [tema1, tema2]          # opcional
+tags: [ia, ferramentas]       # opcional: assuntos (chaves de _data/tags.yml)
 imagem: ""                    # opcional: capa, ex. /assets/images/posts/capa.jpg
 linkedin: ""                  # opcional: link do post no LinkedIn sobre este texto
 ref: ""                       # opcional: um apelido igual nas versões PT e EN do mesmo texto

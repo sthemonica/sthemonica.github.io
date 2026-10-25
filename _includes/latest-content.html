@@ -1,0 +1,81 @@
+{%- comment -%}
+  Últimos conteúdos da página inicial: junta artigos, vídeos, podcasts e fotos,
+  ordena pela data ("date") e mostra o mais recente em destaque + os seguintes
+  numa lista curta. Parâmetro opcional: limit (total de itens, padrão 4)
+{%- endcomment -%}
+{%- include i18n.html -%}
+{%- assign _posts = "" | split: "" -%}
+{%- for post in site.posts -%}
+  {%- if post.lang == lang -%}
+    {%- assign _posts = _posts | push: post -%}
+  {%- else -%}
+    {%- include find-translation.html item=post -%}
+    {%- unless translation -%}{%- assign _posts = _posts | push: post -%}{%- endunless -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- assign _all = _posts | concat: site.videos | concat: site.podcasts | concat: site.galeria | sort: "date" | reverse -%}
+{%- assign _limit = include.limit | default: 4 -%}
+
+{% if _all.size == 0 %}
+  <p>{{ t.no_posts }}</p>
+{% else %}
+{% for item in _all limit: _limit %}
+  {%- assign _type = item.collection -%}
+  {%- assign _title = item.title -%}
+  {%- assign _desc = item.content | strip_html | strip -%}
+  {%- if _type == "posts" -%}
+    {%- if item.resumo and item.resumo != "" -%}{%- assign _desc = item.resumo -%}{%- else -%}{%- assign _desc = item.excerpt | strip_html | strip -%}{%- endif -%}
+  {%- elsif lang == "en" -%}
+    {%- if item.title_en and item.title_en != "" -%}{%- assign _title = item.title_en -%}{%- endif -%}
+    {%- if item.texto_en and item.texto_en != "" -%}{%- assign _desc = item.texto_en -%}{%- endif -%}
+  {%- endif -%}
+  {%- assign _img = "" -%}{%- assign _url = "" -%}
+  {%- case _type -%}
+    {%- when "posts" -%}
+      {%- assign _url = item.url | relative_url -%}
+      {%- if item.imagem and item.imagem != "" -%}{%- assign _img = item.imagem | relative_url -%}{%- endif -%}
+    {%- when "videos" -%}
+      {%- capture _id -%}{% include youtube-id.html url=item.youtube %}{%- endcapture -%}
+      {%- assign _img = "https://i.ytimg.com/vi/" | append: _id | append: "/hqdefault.jpg" -%}
+      {%- assign _url = "https://www.youtube.com/watch?v=" | append: _id -%}
+    {%- when "podcasts" -%}
+      {%- if item.spotify and item.spotify != "" -%}{%- assign _url = item.spotify -%}{%- elsif item.link and item.link != "" -%}{%- assign _url = item.link -%}{%- else -%}{%- assign _url = t.podcasts_url | relative_url -%}{%- endif -%}
+    {%- when "galeria" -%}
+      {%- assign _img = item.imagem | relative_url -%}
+      {%- assign _url = t.gallery_url | relative_url -%}
+  {%- endcase -%}
+  {%- assign _external = false -%}{%- if _url contains "://" -%}{%- assign _external = true -%}{%- endif -%}
+
+  {%- if forloop.first %}
+  <article class="latest-featured latest-{{ _type }}">
+    <a class="latest-media" href="{{ _url }}"{% if _external %} target="_blank" rel="noopener"{% endif %} tabindex="-1" aria-hidden="true">
+      {%- if _img != "" -%}<img src="{{ _img }}" alt="" loading="lazy">
+      {%- elsif _type == "podcasts" -%}<span class="latest-icon"><i class="fas fa-podcast"></i></span>
+      {%- else -%}<span class="latest-icon"><i class="fas fa-pen-nib"></i></span>{%- endif -%}
+    </a>
+    <div class="latest-body">
+      <span class="latest-kind">{{ t.newest }} · {{ t.content_types[_type] }}</span>
+      <h4><a href="{{ _url }}"{% if _external %} target="_blank" rel="noopener"{% endif %}>{{ _title }}</a></h4>
+      <small class="meta">{% if item.programa and item.programa != "" %}{{ item.programa }} · {% endif %}{% include data-pt.html date=item.date lang=lang %}</small>
+      {%- if _type == "galeria" -%}
+        {%- if item.status and item.status != "" -%}<span class="tag-list">{% for st in item.status %}<span class="tag">{{ site.data.tags.status_fotos[st][lang] | default: st }}</span>{% endfor %}</span>{%- endif -%}
+      {%- elsif _type == "posts" -%}
+        {% include tag-list.html tags=item.tags %}
+      {%- else -%}
+        {% include tag-list.html tags=item.tags idioma=item.idioma %}
+      {%- endif -%}
+      {% if _desc != "" %}<p>{{ _desc | truncatewords: 32 }}</p>{% endif %}
+    </div>
+  </article>
+  {%- if _all.size > 1 %}
+  <ul class="post-mini-list latest-list">
+  {%- endif -%}
+  {%- else %}
+    <li><span class="latest-type">{{ t.content_types[_type] }}</span> <a href="{{ _url }}"{% if _external %} target="_blank" rel="noopener"{% endif %}>{{ _title }}</a>
+      <small class="meta">— {% include data-pt.html date=item.date lang=lang %}</small></li>
+  {%- endif -%}
+{% endfor %}
+{%- if _all.size > 1 %}
+  </ul>
+{%- endif %}
+{% endif %}

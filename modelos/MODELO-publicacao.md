@@ -12,6 +12,7 @@ dados: ""           # opcional: link dos dados (Zenodo etc.)
 slides: ""          # opcional
 poster: ""          # opcional
 status: ""          # opcional: "em revisão", "aceito", "no prelo"...
+idioma: ""          # opcional: pt (Português) ou en (Inglês) — vira uma tag
 ---
 Resumo (opcional). Se escrever algo aqui, aparece um botão "Resumo" que abre o texto.
 

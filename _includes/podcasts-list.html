@@ -30,7 +30,8 @@
       <span class="podcast-icon" aria-hidden="true"><i class="fas fa-podcast"></i></span>
       <div>
         <strong>{{ _title }}</strong>
-        <small class="meta">{% if item.programa and item.programa != "" %}{{ item.programa }} · {% endif %}{% include data-pt.html date=item.date lang=lang %}{% if item.idioma and item.idioma != lang %} · <span class="lang-badge" title="{{ t.in_other_lang }}">{{ item.idioma | upcase }}</span>{% endif %}</small>
+        <small class="meta">{% if item.programa and item.programa != "" %}{{ item.programa }} · {% endif %}{% include data-pt.html date=item.date lang=lang %}</small>
+        {% include tag-list.html tags=item.tags idioma=item.idioma %}
       </div>
     </div>
     {% if _desc != "" %}<p class="podcast-desc">{{ _desc | truncatewords: 40 }}</p>{% endif %}

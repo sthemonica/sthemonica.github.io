@@ -21,8 +21,8 @@ layout: default
 <p class="meta"><small>
   {% include data-pt.html date=page.date lang=lang %}
   {% assign words = content | number_of_words %} · {{ words | divided_by: 200 | plus: 1 | floor }} {{ t.min_read }}
-  {% for tg in page.tags %}<span class="tag">{{ tg }}</span>{% endfor %}
 </small></p>
+{% include tag-list.html tags=page.tags %}
 {% elsif page.description %}
 <p class="meta"><small>{{ page.description }}</small></p>
 {% endif %}

@@ -25,6 +25,11 @@ pt:
   see_all: "Ver todos →"
   latest_posts: "Últimos artigos"
   all_posts: "Ver todos os artigos →"
+  # Página inicial: últimos conteúdos (artigos, vídeos, podcasts e fotos)
+  latest_content: "Últimos conteúdos"
+  all_content: "Ver todos os conteúdos →"
+  newest: "Mais recente"
+  content_types: { posts: "Artigo", videos: "Vídeo", podcasts: "Podcast", galeria: "Foto" }
   no_posts: "Nenhum artigo ainda."
   no_videos: "Nenhum vídeo ainda."
   no_podcasts: "Nenhum episódio ainda."
@@ -46,6 +51,8 @@ pt:
     tese: "Teses e dissertações"
     outro: "Outras produções"
   abstract: "Resumo"
+  # Idioma da publicação (campo "idioma") e status traduzido (campo "status")
+  languages: { pt: "Português", en: "Inglês" }
   code: "Código"
   data: "Dados"
   slides: "Slides"
@@ -104,6 +111,10 @@ en:
   see_all: "See all →"
   latest_posts: "Latest articles"
   all_posts: "See all articles →"
+  latest_content: "Latest content"
+  all_content: "See all content →"
+  newest: "Newest"
+  content_types: { posts: "Article", videos: "Video", podcasts: "Podcast", galeria: "Photo" }
   no_posts: "No articles yet."
   no_videos: "No videos yet."
   no_podcasts: "No episodes yet."
@@ -124,6 +135,8 @@ en:
     tese: "Theses"
     outro: "Other output"
   abstract: "Abstract"
+  languages: { pt: "Portuguese", en: "English" }
+  status_labels: { "aceito": "accepted", "em revisão": "under review", "no prelo": "in press", "submetido": "submitted", "publicado": "published" }
   code: "Code"
   data: "Data"
   slides: "Slides"

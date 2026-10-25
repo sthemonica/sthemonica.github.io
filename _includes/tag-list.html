@@ -1,0 +1,11 @@
+{%- comment -%}
+  Tags de um conteúdo, no idioma da página (nomes em _data/tags.yml).
+  Parâmetros: tags (lista de chaves), idioma (opcional: pt ou en → tag de idioma)
+  Precisa de "lang" e "t" já definidos (include i18n.html).
+{%- endcomment -%}
+{%- if include.tags.size > 0 or include.idioma and include.idioma != "" -%}
+<span class="tag-list">
+  {%- if include.idioma and include.idioma != "" -%}<span class="tag">{{ t.languages[include.idioma] | default: include.idioma }}</span>{%- endif -%}
+  {%- for tg in include.tags -%}<span class="tag">{{ site.data.tags.temas[tg][lang] | default: tg }}</span>{%- endfor -%}
+</span>
+{%- endif -%}

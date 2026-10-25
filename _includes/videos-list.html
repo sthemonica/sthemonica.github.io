@@ -22,7 +22,8 @@
     </button>
     <div class="video-info">
       <strong>{{ _title }}</strong>
-      <small class="meta">{% include data-pt.html date=item.date lang=lang %}{% if item.idioma and item.idioma != lang %} · <span class="lang-badge" title="{{ t.in_other_lang }}">{{ item.idioma | upcase }}</span>{% endif %}</small>
+      <small class="meta">{% include data-pt.html date=item.date lang=lang %}</small>
+      {% include tag-list.html tags=item.tags idioma=item.idioma %}
       {% if _desc != "" %}<span class="video-desc">{{ _desc | truncatewords: 25 }}</span>{% endif %}
       <a class="video-link" href="https://www.youtube.com/watch?v={{ _id }}" target="_blank" rel="noopener"><i class="fab fa-youtube"></i> {{ t.watch_youtube }}</a>
     </div>

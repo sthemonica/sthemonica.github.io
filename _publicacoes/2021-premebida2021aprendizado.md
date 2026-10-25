@@ -7,4 +7,6 @@ tipo: tese
 doi: ""
 link: ""
 pdf: ""
+status: "aceito"
+idioma: pt           # pt = Português | en = Inglês
 ---

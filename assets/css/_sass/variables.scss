@@ -8,17 +8,38 @@ $spacing-unit:     30px;
 $light-gray: gray;
 $text-color:       #333;
 $background-color: #fdfdfd;
-$brand-color:      #60c17d;
 $projectbox-text:  #1e2126;
+$highlight-color:      #7b3fbf; // cor do **negrito** nos textos (modo claro)
+$highlight-color-dark: #c4a3f5; // cor do **negrito** nos textos (modo escuro)
+$brand-color:      $highlight-color;      // cor principal (títulos de seção, menu, botões, links)
+$brand-color-dark: $highlight-color-dark; // cor principal no modo escuro
+
+// ---- Paleta dos cartões e selos ----
+// Deixe UMA paleta ativa. Para trocar: coloque // na frente das linhas da
+// paleta ativa e apague o // das linhas da outra. (Passo a passo no GUIA.md, seção 19.)
+
+// Paleta ativa: Lavanda + Menta
+$projectbox:       #ece3fa; // blocos da página de Projetos (modo claro)
+$card-bg:          #f4effc; // cartões de vídeo, podcast e foto (modo claro)
+$projectbox-dark:  #3a3250; // blocos da página de Projetos (modo escuro)
+$card-bg-dark:     #2d2838; // cartões de vídeo, podcast e foto (modo escuro)
+$accent-2:         #c9eedd; // tags dos posts e status das publicações (modo claro)
+$accent-2-dark:    #9fd8bd; // tags e status (modo escuro)
+
+// Paleta alternativa: Lavanda + Pêssego
+// $projectbox:       #f0e8fb;
+// $card-bg:          #f6f1fd;
+// $projectbox-dark:  #3d3348;
+// $card-bg-dark:     #2f2a37;
+// $accent-2:         #ffd9c7;
+// $accent-2-dark:    #f2b9a0;
 
 // Color scheme for light
 $body-bg: #fdfdfd;
-$projectbox: #c3e1c9;
 $text-color: #333;
 
 // Color scheme for dark modes
 $body-bg-dark: #23272d;
-$projectbox-dark: lighten(#98a0ac, 2%);
 $text-color-dark: #98a0ac;
 
 // ---- Modo escuro ----

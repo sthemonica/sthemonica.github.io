@@ -18,6 +18,9 @@
       <img src="{{ item.imagem | relative_url }}" alt="{{ _title | escape }}" loading="lazy">
     </button>
     <figcaption>
+      {%- if item.status and item.status != "" -%}
+      <span class="status-list">{% for st in item.status %}<span class="status-badge">{{ site.data.tags.status_fotos[st][lang] | default: st }}</span>{% endfor %}</span>
+      {%- endif %}
       <strong>{{ _title }}</strong>
       <small class="meta">{% if _local and _local != "" %}{{ _local }} · {% endif %}{% include data-pt.html date=item.date lang=lang %}</small>
       {% if _desc != "" %}<span class="photo-desc">{{ _desc | truncatewords: 25 }}</span>{% endif %}

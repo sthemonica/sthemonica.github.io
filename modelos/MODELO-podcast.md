@@ -6,7 +6,8 @@ spotify: ""                   # link do episódio no Spotify → mostra o player
 apple: ""                     # opcional
 youtube: ""                   # opcional
 link: ""                      # opcional: qualquer outra plataforma
-idioma: pt                    # idioma do episódio: pt ou en
+idioma: pt                    # idioma do episódio: pt ou en (vira uma tag)
+tags: [ia, carreira]          # assuntos (chaves de _data/tags.yml)
 title_en: ""
 texto_en: ""
 ---

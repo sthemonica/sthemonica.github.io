@@ -1,0 +1,34 @@
+# Tags dos conteúdos e status das fotos, com o nome em cada idioma.
+# Nos arquivos, use a CHAVE (à esquerda, sem acento), ex.:  tags: [ia, ferramentas]
+# O site mostra o nome no idioma da página. Uma chave que não estiver aqui
+# aparece do jeito que foi escrita (sem tradução).
+# Para criar uma tag nova, copie uma linha e troque a chave e os nomes.
+
+# Assuntos de artigos, vídeos e podcasts (campo "tags")
+temas:
+  ia:                  { pt: "IA",                  en: "AI" }
+  visao-computacional: { pt: "Visão computacional", en: "Computer vision" }
+  nlp:                 { pt: "PLN",                 en: "NLP" }
+  dados:               { pt: "Dados",               en: "Data" }
+  estatistica:         { pt: "Estatística",         en: "Statistics" }
+  programacao:         { pt: "Programação",         en: "Programming" }
+  python:              { pt: "Python",              en: "Python" }
+  ferramentas:         { pt: "Ferramentas",         en: "Tools" }
+  pesquisa:            { pt: "Pesquisa",            en: "Research" }
+  carreira:            { pt: "Carreira",            en: "Career" }
+  ensino:              { pt: "Ensino",              en: "Teaching" }
+  dia-a-dia:           { pt: "Dia a dia",           en: "Everyday life" }
+  espaco:              { pt: "Espaço",              en: "Space" }
+  saude:               { pt: "Saúde",               en: "Health" }
+
+# Status das fotos da galeria (campo "status")
+status_fotos:
+  phd:         { pt: "Doutorado",   en: "PhD" }
+  mestrado:    { pt: "Mestrado",    en: "Master's" }
+  graduacao:   { pt: "Graduação",   en: "Undergraduate" }
+  workshop:    { pt: "Workshop",    en: "Workshop" }
+  palestra:    { pt: "Palestra",    en: "Talk" }
+  conferencia: { pt: "Conferência", en: "Conference" }
+  poster:      { pt: "Pôster",      en: "Poster" }
+  premio:      { pt: "Prêmio",      en: "Award" }
+  viagem:      { pt: "Viagem",      en: "Trip" }
